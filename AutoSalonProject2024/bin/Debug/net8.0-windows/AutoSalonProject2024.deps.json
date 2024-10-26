@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "AutoSalonProject2024/1.0.0": {
+        "runtime": {
+          "AutoSalonProject2024.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AutoSalonProject2024/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,17 @@
+﻿<Window x:Class="AutoSalonProject2024.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoSalonProject2024"
+        mc:Ignorable="d"
+               Title="Welcome!" Height="700" Width="1000" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TextBlock Margin="330, 30, 0, 0" FontSize="40" Text="{Binding Salon.Name}"></TextBlock>
+        <TextBlock Margin="380, 80, 0, 0" FontSize="20" Text="{Binding Salon.Address.StreetName}"></TextBlock>
+        <TextBlock Margin="470, 105, 0, 0" FontSize="20" Text="{Binding Salon.Address.StreetNumber}"></TextBlock>
+        <Button Width="100" Height="50" FontSize="20" Margin="0, 100, 0, 0" Command="{Binding ShowLoginWindow}">Log in</Button>
+        <Button Width="160" Height="50" FontSize="20" Margin="200,250,385,317" Command="{Binding ShowRegisterAsSellerWindow}">Register as seller</Button>
+        <Button Width="160" Height="50" FontSize="20" Margin="200,250,5,317" Command="{Binding ShowRegisterAsBuyerWindow}">Register as buyer</Button>
+    </Grid>
+</Window>
