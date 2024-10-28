@@ -1,3 +1,3 @@
 # Car Salon .NET WPF 
 
-![alt text](CarSalonClassDiagramEN.png)
+![alt text](CarDealershipClassDiagram.png)

@@ -19,7 +19,5 @@ namespace AutoSalonProject2024.Models
         public decimal SalePrice { get; set; }
         public CarModel Model { get; set; }
         public FuelType FuelType { get; set; }
-        public Seller ListedBy { get; set; }
-
     }
 }

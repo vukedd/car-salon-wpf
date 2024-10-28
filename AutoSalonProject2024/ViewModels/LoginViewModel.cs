@@ -29,7 +29,7 @@ namespace AutoSalonProject2024.ViewModels
 
         private void AuthenticateUserMet(object obj)
         {
-            foreach (User u in UserManager.Users) 
+            foreach (Seller u in UserManager.Users) 
             {
                 if (u.Username == Username && u.Password == Password)
                 {

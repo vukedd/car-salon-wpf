@@ -13,10 +13,7 @@
     <Compile Update="Views\LoginViews\LoginWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\RegisterViews\RegisterBuyerWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\RegisterViews\RegisterSellerWindow.xaml.cs">
+    <Compile Update="Views\RegisterViews\RegisterWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -27,10 +24,7 @@
     <Page Update="Views\LoginViews\LoginWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\RegisterViews\RegisterBuyerWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\RegisterViews\RegisterSellerWindow.xaml">
+    <Page Update="Views\RegisterViews\RegisterWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

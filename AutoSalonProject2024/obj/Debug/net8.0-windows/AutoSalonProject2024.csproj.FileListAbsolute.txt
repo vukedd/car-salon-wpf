@@ -21,7 +21,5 @@ C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\obj\Deb
 C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\obj\Debug\net8.0-windows\AutoSalonProject2024.genruntimeconfig.cache
 C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\obj\Debug\net8.0-windows\ref\AutoSalonProject2024.dll
 C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\obj\Debug\net8.0-windows\AutoSalonProject2024.sourcelink.json
-C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\obj\Debug\net8.0-windows\Views\RegisterViews\RegisterBuyerWindow.g.cs
-C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\obj\Debug\net8.0-windows\Views\RegisterViews\RegisterSellerWindow.g.cs
-C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\obj\Debug\net8.0-windows\Views\RegisterViews\RegisterBuyerWindow.baml
-C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\obj\Debug\net8.0-windows\Views\RegisterViews\RegisterSellerWindow.baml
+C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\obj\Debug\net8.0-windows\Views\RegisterViews\RegisterWindow.g.cs
+C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\obj\Debug\net8.0-windows\Views\RegisterViews\RegisterWindow.baml

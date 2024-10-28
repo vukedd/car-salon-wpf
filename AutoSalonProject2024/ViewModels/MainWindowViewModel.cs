@@ -15,30 +15,17 @@ namespace AutoSalonProject2024.ViewModels
     {
         public ICommand ShowLoginWindow { get; set; }
         public ICommand ShowRegisterAsSellerWindow { get; set; }
-        public ICommand ShowRegisterAsBuyerWindow { get; set; }
 
 
-        public Salon Salon { get; set; }
+        public Dealership Salon { get; set; }
 
         public MainWindowViewModel()
         {
-            Salon = new Salon();
-            Salon.Name = "Auto Salon Djuricic";
+            Salon = new Dealership();
+            Salon.Name = "State Dealership";
             Salon.Address = new Address(1, "Trg Dositeja Obradovica", "7A", "21000");
             ShowRegisterAsSellerWindow = new RelayCommand(ShowRegisterAsSellerWindowMet, CanShowRegisterAsSellerWindow);
-            ShowRegisterAsBuyerWindow = new RelayCommand(ShowRegisterAsBuyerWindowMet, CanShowRegisterAsBuyerWindow);
             ShowLoginWindow = new RelayCommand(ShowLoginWindowMet, CanShowLoginWindow);
-        }
-
-        public bool CanShowRegisterAsBuyerWindow(object obj)
-        {
-            return true;
-        }
-
-        public void ShowRegisterAsBuyerWindowMet(object obj)
-        {
-            RegisterBuyerWindow RegisterBuyerWindow = new RegisterBuyerWindow();
-            RegisterBuyerWindow.ShowDialog();
         }
 
         public bool CanShowRegisterAsSellerWindow(object obj)

@@ -7,11 +7,10 @@
         mc:Ignorable="d"
                Title="Welcome!" Height="700" Width="1000" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <TextBlock Margin="330, 30, 0, 0" FontSize="40" Text="{Binding Salon.Name}"></TextBlock>
-        <TextBlock Margin="380, 80, 0, 0" FontSize="20" Text="{Binding Salon.Address.StreetName}"></TextBlock>
-        <TextBlock Margin="470, 105, 0, 0" FontSize="20" Text="{Binding Salon.Address.StreetNumber}"></TextBlock>
+        <TextBlock Margin="350, 30, 0, 0" FontSize="40" Text="{Binding Salon.Name}"></TextBlock>
+        <TextBlock Margin="382, 80, 0, 0" FontSize="20" Text="{Binding Salon.Address.StreetName}"></TextBlock>
+        <TextBlock Margin="475, 105, 0, 0" FontSize="20" Text="{Binding Salon.Address.StreetNumber}"></TextBlock>
         <Button Width="100" Height="50" FontSize="20" Margin="0, 100, 0, 0" Command="{Binding ShowLoginWindow}">Log in</Button>
-        <Button Width="160" Height="50" FontSize="20" Margin="200,250,385,317" Command="{Binding ShowRegisterAsSellerWindow}">Register as seller</Button>
-        <Button Width="160" Height="50" FontSize="20" Margin="200,250,5,317" Command="{Binding ShowRegisterAsBuyerWindow}">Register as buyer</Button>
+        <Button Width="100" Height="50" FontSize="20" Margin="383,250,385,317" Command="{Binding ShowRegisterAsSellerWindow}">Register</Button>
     </Grid>
 </Window>
