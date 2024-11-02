@@ -23,3 +23,5 @@ C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\obj\Deb
 C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\obj\Debug\net8.0-windows\AutoSalonProject2024.sourcelink.json
 C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\obj\Debug\net8.0-windows\Views\RegisterViews\RegisterWindow.g.cs
 C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\obj\Debug\net8.0-windows\Views\RegisterViews\RegisterWindow.baml
+C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\obj\Debug\net8.0-windows\Views\SellerViews\HomepageWindow.g.cs
+C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\obj\Debug\net8.0-windows\Views\SellerViews\HomepageWindow.baml

@@ -1,21 +1,27 @@
 ﻿using AutoSalonProject2024.Commands;
 using AutoSalonProject2024.Managers;
 using AutoSalonProject2024.Models;
+using AutoSalonProject2024.Views.SellerViews;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace AutoSalonProject2024.ViewModels
 {
     public class LoginViewModel
     {
+        public event EventHandler AuthenticationSuccess;
+        public event EventHandler AuthenticationFailure;
+
         public ICommand AuthenticateUser { get; set; }
         public string? Username { get; set; }
-        public string? Password { get; set; }
+        public string? Password { private get; set; }
 
         public LoginViewModel()
         {
@@ -31,11 +37,26 @@ namespace AutoSalonProject2024.ViewModels
         {
             foreach (Seller u in UserManager.Users) 
             {
-                if (u.Username == Username && u.Password == Password)
+                if (u.Username.ToLower() == Username.ToLower() && u.Password == Password)
                 {
-                    Trace.WriteLine("You have logged in");
+                    OnAuthenticationSuccess();
+                    HomepageWindow homepage = new HomepageWindow();
+                    homepage.Show();
+                    return;
                 }
             }
+
+            OnAuthenticationFailure();
+        }
+
+        protected void OnAuthenticationFailure()
+        {
+            AuthenticationFailure?.Invoke(this, EventArgs.Empty);
+        }
+
+        protected void OnAuthenticationSuccess()
+        {
+            AuthenticationSuccess?.Invoke(this, EventArgs.Empty);
         }
     }
 }

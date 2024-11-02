@@ -1,6 +1,8 @@
 ﻿using AutoSalonProject2024.ViewModels;
+using AutoSalonProject2024.Views.SellerViews;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +27,37 @@ namespace AutoSalonProject2024.Views.LoginViews
             InitializeComponent();
             LoginViewModel loginViewModel = new LoginViewModel();
             this.DataContext = loginViewModel;
+
+            loginViewModel.AuthenticationSuccess += OnAuthenticationSuccess;
+            loginViewModel.AuthenticationFailure += OnAuthenticationFailure;
+        }
+
+        private void OnAuthenticationFailure(object? sender, EventArgs e)
+        {
+            validation.Visibility = Visibility.Visible;
+        }
+
+        private void OnAuthenticationSuccess(object sender, EventArgs e)
+        {
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window != Application.Current.MainWindow)
+                {
+                    window.Close();
+                }
+                else
+                {
+                    window.Hide();
+                }
+            }
+        }
+
+        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (this.DataContext != null)
+            { 
+                ((dynamic)this.DataContext).Password = ((PasswordBox)sender).Password; 
+            }
         }
     }
 }

@@ -8,10 +8,11 @@
         Title="Log in" Height="600" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <TextBlock FontSize="50" Margin="120, 20, 100, 20">Log in</TextBlock>
+        <Label Margin="100" Visibility="Hidden" Name="validation" Foreground="red">Invalid Username or Password</Label>
         <Label Margin="90,147,0,0" Content="Username:"/>
         <TextBox Margin="0, 0, 0,200" Background="AliceBlue" Text="{Binding Username}" Width="200" Height="20" TabIndex="1" IsEnabled="True"/>
         <Label Margin="90,195,0,0" Content="Password:"/>
-        <TextBox Margin="0, 95, 0,200" Background="AliceBlue" Text="{Binding Password}" Width="200" Height="20" TabIndex="1" IsEnabled="True"/>
+        <PasswordBox Margin="0, 95, 0,200" Background="AliceBlue" PasswordChanged="PasswordBox_PasswordChanged" Width="200" Height="20" TabIndex="1" IsEnabled="True"/>
         <Button Width="100" Height="30" Command="{Binding AuthenticateUser}">Log in</Button>
     </Grid>
 

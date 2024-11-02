@@ -8,15 +8,19 @@
         Title="Register" Height="600" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Label Margin="90, 195, 0, 0" Content="Password:"/>
-        <Label Margin="90, 245, 0, 0" Content="JMBG:"/>
+        <Label Margin="90, 245, 0, 0" Content="JMBG:" Name="JMBG"/>
         <TextBlock FontSize="25" Margin="110,30,50,30"><Run Text="Register (Seller)"/></TextBlock>
         <Label Margin="90, 95, 0, 0" Content="Name:"/>
         <Label Margin="90,145,0,0" Content="Username:"/>
-        <TextBox Margin="0, 0, 0,200" Background="AliceBlue" Text="{Binding Username}" Width="200" Height="20" TabIndex="1" IsEnabled="True"/>
-        <TextBox Margin="0, 0, 0,300" Background="AliceBlue" Text="{Binding Name}" Width="200" Height="20" TabIndex="0" IsEnabled="True"/>
+        <TextBox Margin="0, 0, 0,200" Background="AliceBlue" TextChanged="Username_TextChanged" Text="{Binding Username}" Width="200" Height="20" TabIndex="1" IsEnabled="True"/>
+        <TextBox Margin="0, 0, 0,300" Background="AliceBlue" TextChanged="Name_TextChanged" Text="{Binding Name}" Width="200" Height="20" TabIndex="0" IsEnabled="True"/>
         <Button Width="200" Height="50" Margin="0, 400, 0, 0" Content="Register" Command="{Binding RegisterNewSeller}"/>
-        <PasswordBox Margin="0, 0, 0, 100" Background="AliceBlue" Width="200" Height="20" TabIndex="2" IsEnabled="True" />
-        <TextBox Background="AliceBlue" Text="{Binding JMBG}" Width="200" Height="20" TabIndex="3" IsEnabled="True"/>
+        <PasswordBox Margin="0, 0, 0, 100" Background="AliceBlue" PasswordChanged="PasswordBox_PasswordChanged" Width="200" Height="20" TabIndex="2" IsEnabled="True" />
+        <Label Name="PasswordValidation" Foreground="Red" Width="20" Height="20" Margin="250, -100, 0, 0" Padding="0" Visibility="Hidden">x</Label>
+        <Label Name="UsernameValidation" Foreground="Red" Width="20" Height="20" Margin="250, -200, 0, 0" Padding="0" Visibility="Hidden">x</Label>
+        <Label Name="NameValidation" Foreground="Red" Width="20" Height="20" Margin="250, -300, 0, 0" Padding="0" Visibility="Hidden">x</Label>
+        <TextBox Background="AliceBlue" Name="JMBGField" PreviewTextInput="previewTextInput" TextChanged="JMBGField_TextChanged" Text="{Binding JMBG}" Margin="0, 0, 0, 0"  Width="200" Height="20" TabIndex="3" IsEnabled="True"/>
+        <Label Name="JMBGValidation" Foreground="Red" Width="20" Height="20" Margin="250, 0, 0, 0" Padding="0" Visibility="Hidden">x</Label>
     </Grid>
 
 </Window>

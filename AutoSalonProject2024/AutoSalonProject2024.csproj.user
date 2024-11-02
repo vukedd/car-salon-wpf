@@ -16,6 +16,9 @@
     <Compile Update="Views\RegisterViews\RegisterWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\SellerViews\HomepageWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
@@ -25,6 +28,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\RegisterViews\RegisterWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SellerViews\HomepageWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

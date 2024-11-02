@@ -1,6 +1,7 @@
 ﻿using AutoSalonProject2024.Commands;
 using AutoSalonProject2024.Managers;
 using AutoSalonProject2024.Models;
+using AutoSalonProject2024.Views.RegisterViews;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -13,10 +14,13 @@ namespace AutoSalonProject2024.ViewModels
 {
     public class RegisterWindowViewModel
     {
+        public event EventHandler UserAlreadyExists;
+        public event EventHandler RegisterSuccess;
         public ICommand RegisterNewSeller { get; set; }
         public string? JMBG { get; set; }
         public string? Name { get; set; }
         public string? Username { get; set; }
+        public string? Password { private get; set; }
 
         public RegisterWindowViewModel()
         {
@@ -30,8 +34,33 @@ namespace AutoSalonProject2024.ViewModels
 
         private void RegisterNewSellerMet(object obj)
         {
-            UserManager.Users.Add(new Seller() { Id = 1, Name = Name, JMBG = JMBG, Username = Username, Password = "Password", Profit = 0 });
-            Trace.WriteLine(UserManager.Users[0].Name);
+            if (RegisterSellerWindow.isInputDataValid.Any(e => e == false))
+            {
+                Trace.WriteLine("Input valid data");
+            }
+            else
+            {
+                foreach (Seller s in UserManager.Users)
+                {
+                    if (s.Username.ToLower() == Username.ToLower())
+                    {
+                        onUserAlreadyExists();
+                        return;
+                    }
+                }
+                UserManager.Users.Add(new Seller() { Id = 1, Name = Name.Trim().ToLower(), JMBG = JMBG.Trim(), Username = Username.Trim().ToLower(), Password = Password.Trim(), Profit = 0 });
+                onRegisterSuccess();
+            }
+        }
+
+        private void onRegisterSuccess()
+        {
+            RegisterSuccess?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void onUserAlreadyExists()
+        {
+            UserAlreadyExists?.Invoke(this, EventArgs.Empty);
         }
     }
 }
