@@ -3,12 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{37085A5A-B4D7-4FAF-B180-E9AFDED2E61A}|AutoSalonProject2024\\AutoSalonProject2024.csproj|c:\\users\\thinkpad\\source\\repos\\autosalonproject2024\\autosalonproject2024\\viewmodels\\registerwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{37085A5A-B4D7-4FAF-B180-E9AFDED2E61A}|AutoSalonProject2024\\AutoSalonProject2024.csproj|solutionrelative:autosalonproject2024\\viewmodels\\registerwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB79ED31-3DB7-46E1-B84A-C6E2C4902952}|AutoSalonConsole\\AutoSalonConsole.csproj|c:\\users\\thinkpad\\source\\repos\\autosalonproject2024\\autosalonconsole\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB79ED31-3DB7-46E1-B84A-C6E2C4902952}|AutoSalonConsole\\AutoSalonConsole.csproj|solutionrelative:autosalonconsole\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{37085A5A-B4D7-4FAF-B180-E9AFDED2E61A}|AutoSalonProject2024\\AutoSalonProject2024.csproj|c:\\users\\thinkpad\\source\\repos\\autosalonproject2024\\autosalonproject2024\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{37085A5A-B4D7-4FAF-B180-E9AFDED2E61A}|AutoSalonProject2024\\AutoSalonProject2024.csproj|solutionrelative:autosalonproject2024\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB79ED31-3DB7-46E1-B84A-C6E2C4902952}|AutoSalonConsole\\AutoSalonConsole.csproj|c:\\users\\thinkpad\\source\\repos\\autosalonproject2024\\autosalonconsole\\handler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB79ED31-3DB7-46E1-B84A-C6E2C4902952}|AutoSalonConsole\\AutoSalonConsole.csproj|solutionrelative:autosalonconsole\\handler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35E409AD-365E-4E84-A237-6853BCF67F01}|Core\\Core.csproj|c:\\users\\thinkpad\\source\\repos\\autosalonproject2024\\core\\repositories\\carrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35E409AD-365E-4E84-A237-6853BCF67F01}|Core\\Core.csproj|solutionrelative:core\\repositories\\carrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35E409AD-365E-4E84-A237-6853BCF67F01}|Core\\Core.csproj|c:\\users\\thinkpad\\source\\repos\\autosalonproject2024\\core\\services\\carservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35E409AD-365E-4E84-A237-6853BCF67F01}|Core\\Core.csproj|solutionrelative:core\\services\\carservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35E409AD-365E-4E84-A237-6853BCF67F01}|Core\\Core.csproj|c:\\users\\thinkpad\\source\\repos\\autosalonproject2024\\core\\iservices\\icarservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35E409AD-365E-4E84-A237-6853BCF67F01}|Core\\Core.csproj|solutionrelative:core\\iservices\\icarservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35E409AD-365E-4E84-A237-6853BCF67F01}|Core\\Core.csproj|c:\\users\\thinkpad\\source\\repos\\autosalonproject2024\\core\\irepositories\\icarrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35E409AD-365E-4E84-A237-6853BCF67F01}|Core\\Core.csproj|solutionrelative:core\\irepositories\\icarrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35E409AD-365E-4E84-A237-6853BCF67F01}|Core\\Core.csproj|c:\\users\\thinkpad\\source\\repos\\autosalonproject2024\\core\\models\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35E409AD-365E-4E84-A237-6853BCF67F01}|Core\\Core.csproj|solutionrelative:core\\models\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35E409AD-365E-4E84-A237-6853BCF67F01}|Core\\Core.csproj|c:\\users\\thinkpad\\source\\repos\\autosalonproject2024\\core\\data\\cars.csv||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{35E409AD-365E-4E84-A237-6853BCF67F01}|Core\\Core.csproj|solutionrelative:core\\data\\cars.csv||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +42,110 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LoginViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonProject2024\\ViewModels\\LoginViewModel.cs",
-              "RelativeDocumentMoniker": "AutoSalonProject2024\\ViewModels\\LoginViewModel.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonProject2024\\ViewModels\\LoginViewModel.cs",
-              "RelativeToolTip": "AutoSalonProject2024\\ViewModels\\LoginViewModel.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAcwCYAAAANAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "Car.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\Core\\Models\\Car.cs",
+              "RelativeDocumentMoniker": "Core\\Models\\Car.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\Core\\Models\\Car.cs",
+              "RelativeToolTip": "Core\\Models\\Car.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T17:42:33.961Z",
+              "WhenOpened": "2024-11-08T12:43:03.359Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Cars.csv",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\Core\\Data\\Cars.csv",
+              "RelativeDocumentMoniker": "Core\\Data\\Cars.csv",
+              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\Core\\Data\\Cars.csv",
+              "RelativeToolTip": "Core\\Data\\Cars.csv",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
+              "WhenOpened": "2024-11-08T12:42:06.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Handler.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonConsole\\Handler.cs",
+              "RelativeDocumentMoniker": "AutoSalonConsole\\Handler.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonConsole\\Handler.cs",
+              "RelativeToolTip": "AutoSalonConsole\\Handler.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAIwDcAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T12:25:36.598Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CarService.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\Core\\Services\\CarService.cs",
+              "RelativeDocumentMoniker": "Core\\Services\\CarService.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\Core\\Services\\CarService.cs",
+              "RelativeToolTip": "Core\\Services\\CarService.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAIwBYAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T12:24:53.602Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ICarService.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\Core\\IServices\\ICarService.cs",
+              "RelativeDocumentMoniker": "Core\\IServices\\ICarService.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\Core\\IServices\\ICarService.cs",
+              "RelativeToolTip": "Core\\IServices\\ICarService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T12:24:36.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ICarRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\Core\\IRepositories\\ICarRepository.cs",
+              "RelativeDocumentMoniker": "Core\\IRepositories\\ICarRepository.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\Core\\IRepositories\\ICarRepository.cs",
+              "RelativeToolTip": "Core\\IRepositories\\ICarRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T12:23:07.724Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CarRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\Core\\Repositories\\CarRepository.cs",
+              "RelativeDocumentMoniker": "Core\\Repositories\\CarRepository.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\Core\\Repositories\\CarRepository.cs",
+              "RelativeToolTip": "Core\\Repositories\\CarRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T12:22:24.195Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "RegisterWindowViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonProject2024\\ViewModels\\RegisterWindowViewModel.cs",
-              "RelativeDocumentMoniker": "AutoSalonProject2024\\ViewModels\\RegisterWindowViewModel.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonProject2024\\ViewModels\\RegisterWindowViewModel.cs",
-              "RelativeToolTip": "AutoSalonProject2024\\ViewModels\\RegisterWindowViewModel.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAAwCwAAABDAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonConsole\\Program.cs",
+              "RelativeDocumentMoniker": "AutoSalonConsole\\Program.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonConsole\\Program.cs",
+              "RelativeToolTip": "AutoSalonConsole\\Program.cs",
+              "ViewState": "AgIAAPAAAAAAAAAAAAAmwPoAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T17:42:32.733Z",
+              "WhenOpened": "2024-11-08T12:07:28.789Z",
               "EditorCaption": ""
             }
           ]

@@ -25,3 +25,7 @@ C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\obj\Deb
 C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\obj\Debug\net8.0-windows\Views\RegisterViews\RegisterWindow.baml
 C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\obj\Debug\net8.0-windows\Views\SellerViews\HomepageWindow.g.cs
 C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\obj\Debug\net8.0-windows\Views\SellerViews\HomepageWindow.baml
+C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\bin\Debug\net8.0-windows\Core.dll
+C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\bin\Debug\net8.0-windows\Core.pdb
+C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\obj\Debug\net8.0-windows\AutoSalonProject2024.csproj.AssemblyReference.cache
+C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\obj\Debug\net8.0-windows\AutoSalo.98F1BB81.Up2Date
