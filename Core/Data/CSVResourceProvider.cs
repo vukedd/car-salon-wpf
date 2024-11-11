@@ -58,7 +58,6 @@ namespace Core.Data
 
             foreach (string brand in brands)
             {
-                Console.WriteLine(brand);
                 string[] brandData = brand.Split(",");
                 int id = int.Parse(brandData[0]);
                 string name = brandData[1];

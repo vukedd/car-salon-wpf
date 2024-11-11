@@ -50,5 +50,10 @@ namespace AutoSalonProject2024.Models
             }
             return $"{this.Id}, {this.Year}, {this.HorsePower}, {sold}, {this.PurchasePrice}, {this.PurchaseDate}, {this.SalePrice}, {this.Model.Id}, {this.Brand.Id}, {(int)(this.FuelType)}";
         }
+
+        public string toDisplay()
+        {
+            return $"{this.Id}, {this.Year}, {this.HorsePower}, {this.PurchasePrice}, {this.PurchaseDate}, {this.SalePrice}, {this.Model.Name}, {this.Brand.Name}, {(this.FuelType)}";
+        }
     }
 }

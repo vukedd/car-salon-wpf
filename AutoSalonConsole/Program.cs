@@ -109,8 +109,10 @@ namespace AutoSalonConsole
             Console.WriteLine("\nSelect car model:");
             foreach (CarModel m in models)
             {
-                if (m.Brand.Id == newCar.Brand.Id) { }
-                Console.WriteLine(m.ToCSV());
+                if (m.Brand.Id == newCar.Brand.Id)
+                {
+                    Console.WriteLine(m.ToCSV());
+                }
             }
 
             bool validModelInput = false;
@@ -272,6 +274,15 @@ namespace AutoSalonConsole
             {
                 carId = int.Parse(inputId);
             }
+
+            Car car = handler.GetCarById(carId);
+            if (car == null)
+            {
+                Console.WriteLine("");
+                Console.WriteLine("There is no car by the id " + carId);
+                return;
+            }
+            Console.WriteLine(car.toDisplay());
         }
 
         private static void getCars()
@@ -281,7 +292,7 @@ namespace AutoSalonConsole
             Console.WriteLine("----- All cars -----");
             foreach (Car c in cars)
             {
-                Console.WriteLine(c.ToCsv());
+                Console.WriteLine(c.toDisplay());
             }
         }
 
@@ -292,7 +303,7 @@ namespace AutoSalonConsole
             Console.WriteLine("----- All cars -----");
             foreach (Car c in cars)
             {
-                Console.WriteLine(c.ToCsv());
+                Console.WriteLine(c.toDisplay());
             }
 
             bool validIdInput = false;
@@ -333,7 +344,7 @@ namespace AutoSalonConsole
             Console.WriteLine("----- All cars -----");
             foreach (Car c in cars)
             {
-                Console.WriteLine(c.ToCsv());
+                Console.WriteLine(c.toDisplay());
             }
 
             bool validIdInput = false;
