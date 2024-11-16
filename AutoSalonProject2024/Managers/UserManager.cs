@@ -12,7 +12,10 @@ namespace AutoSalonProject2024.Managers
     {
         public static ObservableCollection<Seller> Users { get; set; } = new ObservableCollection<Seller>();
 
-        public UserManager(){}
+        public UserManager()
+        {
+
+        }
 
         public void AddUser(Seller seller)
         {

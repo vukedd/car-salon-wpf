@@ -25,6 +25,7 @@ namespace AutoSalonProject2024.ViewModels
         public RegisterWindowViewModel()
         {
             RegisterNewSeller = new RelayCommand(RegisterNewSellerMet, CanRegisterNewSeller);
+            UserManager.Users.Add(new Seller() { Id = 1, Name="Vukasin", JMBG="2805003800003",Username="vukedd", Password = "vukedd"});
         }
 
         private bool CanRegisterNewSeller(object obj)

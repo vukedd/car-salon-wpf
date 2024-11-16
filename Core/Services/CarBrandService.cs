@@ -4,6 +4,7 @@ using Core.IServices;
 using Core.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace Core.Services
         {
             _carBrandRepository = new CarBrandRepository();
         }
-        public List<CarBrand> GetAllBrands()
+        public ObservableCollection<CarBrand> GetAllBrands()
         {
             return _carBrandRepository.GetAllBrands();
         }

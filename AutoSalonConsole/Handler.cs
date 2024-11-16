@@ -3,6 +3,7 @@ using Core.IServices;
 using Core.Services;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,17 +22,17 @@ namespace AutoSalonConsole
             this._carModelService = new CarModelService();
         }
 
-        public List<Car> GetAllCars()
+        public ObservableCollection<Car> GetAllCars()
         {
             return _carService.GetAllCars();
         }
 
-        public List<CarModel> GetAllModels()
+        public ObservableCollection<CarModel> GetAllModels()
         {
             return _carModelService.GetAllModels();
         }
 
-        public List<CarBrand> GetAllBrands()
+        public ObservableCollection<CarBrand> GetAllBrands()
         {
             return _carBrandService.GetAllBrands();
         }

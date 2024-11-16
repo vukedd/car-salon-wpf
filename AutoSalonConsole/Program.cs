@@ -2,6 +2,7 @@
 using AutoSalonProject2024.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.Dynamic;
 using System.Linq;
@@ -75,8 +76,8 @@ namespace AutoSalonConsole
         private static void createCar()
         {
             Car newCar = new Car();
-            List<CarBrand> brands = handler.GetAllBrands();
-            List<CarModel> models = handler.GetAllModels();
+            ObservableCollection<CarBrand> brands = handler.GetAllBrands();
+            ObservableCollection<CarModel> models = handler.GetAllModels();
             Console.WriteLine("\nSelect car brand:");
             foreach (CarBrand b in brands)
             {
@@ -287,7 +288,7 @@ namespace AutoSalonConsole
 
         private static void getCars()
         {
-            List<Car> cars = handler.GetAllCars();
+            ObservableCollection<Car> cars = handler.GetAllCars();
             Console.WriteLine("");
             Console.WriteLine("----- All cars -----");
             foreach (Car c in cars)
@@ -298,7 +299,7 @@ namespace AutoSalonConsole
 
         private static void deleteCar()
         {
-            List<Car> cars = handler.GetAllCars();
+            ObservableCollection<Car> cars = handler.GetAllCars();
             Console.WriteLine("");
             Console.WriteLine("----- All cars -----");
             foreach (Car c in cars)
@@ -339,7 +340,7 @@ namespace AutoSalonConsole
 
         private static void editCar()
         {
-            List<Car> cars = handler.GetAllCars();
+            ObservableCollection<Car> cars = handler.GetAllCars();
             Console.WriteLine("");
             Console.WriteLine("----- All cars -----");
             foreach (Car c in cars)

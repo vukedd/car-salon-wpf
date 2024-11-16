@@ -16,13 +16,13 @@ namespace AutoSalonProject2024.Models
         public int HorsePower { get; set; }
         public bool Sold { get; set; }
         public decimal PurchasePrice { get; set; }
-        public DateOnly PurchaseDate { get; set; }
+        public DateOnly? PurchaseDate { get; set; }
         public decimal SalePrice { get; set; }
         public CarModel Model { get; set; }
         public CarBrand Brand { get; set;}
         public int BrandId { get; set; }
         public int ModelId { get; set; }
-        public FuelType FuelType { get; set; }
+        public FuelType? FuelType { get; set; }
 
         public Car() { }
         public Car(int Id, int Year, int HorsePower, bool Sold, decimal PurchasePrice, DateOnly PurchaseDate, decimal SalePrice, CarModel model, CarBrand brand, FuelType FuelType)

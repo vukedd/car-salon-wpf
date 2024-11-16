@@ -2,6 +2,7 @@
 using Core.IRepositories;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace Core.Repositories
 {
     public class CountryRepository : ICountryRepository
     {
-        public List<Country> GetAllCountries()
+        public ObservableCollection<Country> GetAllCountries()
         {
             throw new NotImplementedException();
         }

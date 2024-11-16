@@ -50,6 +50,9 @@ namespace AutoSalonProject2024.Views.LoginViews
                     window.Hide();
                 }
             }
+
+            HomepageWindow homepage = new HomepageWindow();
+            homepage.Show();
         }
 
         private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)

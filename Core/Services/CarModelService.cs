@@ -4,6 +4,7 @@ using Core.IServices;
 using Core.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ namespace Core.Services
             _carModelRepository = new CarModelRepository();
         }
 
-        public List<CarModel> GetAllModels()
+        public ObservableCollection<CarModel> GetAllModels()
         {
             return _carModelRepository.GetAllModels();
         }

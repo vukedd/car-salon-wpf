@@ -3,6 +3,7 @@ using Core.Data;
 using Core.IRepositories;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
@@ -17,7 +18,7 @@ namespace Core.Repositories
         {
             _dataProvider = CSVResourceProvider.GetInstance();
         }
-        public List<CarModel> GetAllModels()
+        public ObservableCollection<CarModel> GetAllModels()
         {
             return _dataProvider.modelsList;
         }

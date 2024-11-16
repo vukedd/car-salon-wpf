@@ -2,6 +2,7 @@
 using AutoSalonProject2024.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace Core.Data
         private static CSVResourceProvider instance;
         private static readonly object _lock = new object();
 
-        public List<Car> carsList { get; } = new List<Car>();
-        public List<CarModel> modelsList { get; } = new List<CarModel>();
-        public List<CarBrand> brandsList { get; } = new List<CarBrand>();
-        public List<Country> countriesList { get; } = new List<Country>();
+        public ObservableCollection<Car> carsList { get; } = new ObservableCollection<Car>();
+        public ObservableCollection<CarModel> modelsList { get; } = new ObservableCollection<CarModel>();
+        public ObservableCollection<CarBrand> brandsList { get; } = new ObservableCollection<CarBrand>();
+        public ObservableCollection<Country> countriesList { get; } = new ObservableCollection<Country>();
         public int lastId { get; set; } = 0;
         private CSVResourceProvider()
         {

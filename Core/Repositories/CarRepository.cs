@@ -4,6 +4,7 @@ using Core.Data;
 using Core.IRepositories;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Reflection.Metadata;
@@ -28,7 +29,7 @@ namespace Core.Repositories
             return car;
         }
 
-        public List<Car> GetAllCars()
+        public ObservableCollection<Car> GetAllCars()
         {
             return _dataProvider.carsList;
         }

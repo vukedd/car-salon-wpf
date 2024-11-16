@@ -39,9 +39,8 @@ namespace AutoSalonProject2024.ViewModels
             {
                 if (u.Username.ToLower() == Username.ToLower() && u.Password == Password)
                 {
+                    HomepageWindowViewModel.Seller = u;
                     OnAuthenticationSuccess();
-                    HomepageWindow homepage = new HomepageWindow();
-                    homepage.Show();
                     return;
                 }
             }

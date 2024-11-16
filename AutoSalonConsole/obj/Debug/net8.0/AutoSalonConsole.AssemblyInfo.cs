@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AutoSalonConsole")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d946fe938fbceef53fc9c944038c06f938a0d830")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3bcea2db80192d8f5b517c8169cd8d6f72ef8d64")]
 [assembly: System.Reflection.AssemblyProductAttribute("AutoSalonConsole")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AutoSalonConsole")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

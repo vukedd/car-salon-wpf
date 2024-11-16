@@ -7,6 +7,30 @@
         mc:Ignorable="d"
         Title="HomepageWindow" Height="700" Width="1100" WindowStartupLocation="CenterScreen">
     <Grid>
-
+        <TextBlock FontSize="50" Margin="370,10,100,100" Name="WelcomeMsg"></TextBlock>
+        <TextBlock FontSize="20" Margin="900,10,100,100" Name="Balance"></TextBlock>
+        <ListView Height="400" Width="800" Margin="0, 0, 0, 70" ItemsSource="{Binding Cars}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Id}" Header="Id" Width="25"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Brand.Name}" Header="Brand" Width="70"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Model.Name}" Header="Model" Width="70"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Year}" Header="Production year" Width="120"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding FuelType}" Header="Fuel type" Width="100"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding HorsePower}" Header="Horse power" Width="80"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding PurchasePrice}" Header="Purchase price" Width="90"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding PurchaseDate}" Header="Purchase date" Width="100"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Sold}" Header="Sold" Width="40"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding SalePrice}" Header="SalePrice" Width="100"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Width="100" Height="50" Margin="0, 500, 800, 100" Content="Add new car" Click="AddNewButton_Click"/>
+        <Button Width="100" Height="50" Margin="0, 500, 550, 100" Content="Edit car"/>
+        <Button Width="100" Height="50" Margin="0, 500, 50, 100" Content="Sell car"/>
+        <Button Width="100" Height="50" Margin="0, 500, 300, 100" Content="Delete car"/>
+        <Button Width="100" Height="50" Margin="0, 500, -800, 100" Content="Countries"/>
+        <Button Width="100" Height="50" Margin="0, 500, -550, 100" Content="Brands"/>
+        <Button Width="100" Height="50" Margin="0, 500, -300, 100" Content="Models"/>
     </Grid>
 </Window>
