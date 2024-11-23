@@ -201,13 +201,13 @@ namespace AutoSalonConsole
             bool validPurchaseDateInput = false;
             do
             {
-                Console.WriteLine("\nEnter purchase date(dd/MM/yyyy):");
+                Console.WriteLine("\nEnter purchase date(MM/dd/yyyy):");
                 var input = Console.ReadLine();
                 if (input.ToLower() == "c")
                 {
                     return;
                 }
-                if (DateOnly.TryParseExact(input, "dd/MM/yyyy", out DateOnly o))
+                if (DateOnly.TryParseExact(input, "MM/dd/yyyy", out DateOnly o))
                 {
                     DateOnly purchaseDate = DateOnly.ParseExact(input, "dd/MM/yyyy");
                     newCar.PurchaseDate = purchaseDate;

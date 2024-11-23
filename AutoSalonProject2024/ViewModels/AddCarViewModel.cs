@@ -51,8 +51,8 @@ namespace AutoSalonProject2024.ViewModels
 
         private void AddCarMethod(object obj)
         {
-            
-            DateOnly date = DateOnly.FromDateTime((DateTime)PurchaseDate);
+
+            DateOnly date = DateOnly.FromDateTime(DateTime.Now);
             _carService.AddCar(new Car(0, int.Parse(ProductionYear), int.Parse(HorsePower), false, decimal.Parse(PurchasePrice), date, decimal.Parse(SalePrice), CarModel, CarBrand, FuelType));
             Trace.WriteLine("Car succesfully added!");
             OnCarAdd();

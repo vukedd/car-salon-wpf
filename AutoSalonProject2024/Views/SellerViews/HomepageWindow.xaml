@@ -5,11 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoSalonProject2024.Views.SellerViews"
         mc:Ignorable="d"
-        Title="HomepageWindow" Height="700" Width="1100" WindowStartupLocation="CenterScreen">
+        Title="HomepageWindow" Height="700" Width="1100" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
-        <TextBlock FontSize="50" Margin="370,10,100,100" Name="WelcomeMsg"></TextBlock>
-        <TextBlock FontSize="20" Margin="900,10,100,100" Name="Balance"></TextBlock>
-        <ListView Height="400" Width="800" Margin="0, 0, 0, 70" ItemsSource="{Binding Cars}">
+        <Menu Width="1100" Height="30" Margin="0,-631,0,0">
+            <MenuItem Header="_User"  Height="20" Margin="5,3,0,0">
+                <MenuItem Header="_Log out" Click="LogOutMenuItem_Click"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="_Exit" Click="ExitMenuItem_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <ToolBarTray Height="40" Margin="0, -573, 0, 0">
+            <ToolBar Margin="0,0,0,0" Width="1100" Height="40" Background="LightGray">
+                <Button Width="100" Height="40" Margin="0, 0, 0, 0" Content="Add new car" Click="AddNewButton_Click"/>
+                <Button Width="100" Height="40" Margin="0, 0, 0, 0" Content="Edit car" Click="EditButton_Click"/>
+                <Button Width="100" Height="40" Margin="0, 0, 0, 0" Content="Delete car" Click="DeleteButton_Click"/>
+                <Button Width="100" Height="40" Margin="0, 0, 0, 0" Content="Sell car" Click="SaleButton_Click"/>
+                <Button Width="100" Height="40" Margin="0, 0, 0, 0" Content="Countries"/>
+                <Button Width="100" Height="40" Margin="0, 0, 0, 0" Content="Brands"/>
+                <Button Width="100" Height="40" Margin="0, 0, 0, 0" Content="Models"/>
+            </ToolBar>
+        </ToolBarTray>
+        <TextBlock FontSize="30" Margin="440, 70,100,100" Name="WelcomeMsg"></TextBlock>
+        <TextBlock FontSize="20" Margin="900, 80,100,100" Name="Balance"></TextBlock>
+        <ListView Height="400" Width="800" Margin="0, 100, 0, 70" ItemsSource="{Binding Cars}" Name="CarListView">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Id}" Header="Id" Width="25"></GridViewColumn>
@@ -25,12 +43,5 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Width="100" Height="50" Margin="0, 500, 800, 100" Content="Add new car" Click="AddNewButton_Click"/>
-        <Button Width="100" Height="50" Margin="0, 500, 550, 100" Content="Edit car"/>
-        <Button Width="100" Height="50" Margin="0, 500, 50, 100" Content="Sell car"/>
-        <Button Width="100" Height="50" Margin="0, 500, 300, 100" Content="Delete car"/>
-        <Button Width="100" Height="50" Margin="0, 500, -800, 100" Content="Countries"/>
-        <Button Width="100" Height="50" Margin="0, 500, -550, 100" Content="Brands"/>
-        <Button Width="100" Height="50" Margin="0, 500, -300, 100" Content="Models"/>
     </Grid>
 </Window>

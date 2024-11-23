@@ -26,5 +26,9 @@ namespace AutoSalonProject2024.ViewModels
             Cars = _carService.GetAllCars();
         }
 
+        public void DeleteCar(int id)
+        {
+            _carService.DeleteCar(id);
+        }
     }
 }

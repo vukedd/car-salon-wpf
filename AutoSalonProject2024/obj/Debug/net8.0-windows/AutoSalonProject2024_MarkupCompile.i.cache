@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\App.xaml
-5-469273758
+7-1224785321
 
-17570303764
+20687511360
 199-706327154
-MainWindow.xaml;Views\LoginViews\LoginWindow.xaml;Views\RegisterViews\RegisterWindow.xaml;Views\SellerViews\CarManageViews\AddCarWindow.xaml;Views\SellerViews\HomepageWindow.xaml;
+MainWindow.xaml;Views\LoginViews\LoginWindow.xaml;Views\RegisterViews\RegisterWindow.xaml;Views\SellerViews\CarManageViews\AddCarWindow.xaml;Views\SellerViews\CarManageViews\EditCarWindow.xaml;Views\SellerViews\CarManageViews\SaleWindow.xaml;Views\SellerViews\HomepageWindow.xaml;
 
 True
 
