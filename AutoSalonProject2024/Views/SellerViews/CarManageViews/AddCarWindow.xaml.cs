@@ -32,6 +32,7 @@ namespace AutoSalonProject2024.Views.SellerViews.CarManageViews
             this.DataContext = addCarViewModel;
             fuelType.ItemsSource = Enum.GetValues(typeof(FuelType));
             addCarViewModel.carAdded += OnCarAdded;
+            PurchaseDateDP.DisplayDateEnd = DateTime.Today;
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

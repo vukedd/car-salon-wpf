@@ -49,7 +49,7 @@ namespace AutoSalonProject2024.ViewModels
                         return;
                     }
                 }
-                UserManager.Users.Add(new Seller() { Id = 1, Name = Name.Trim().ToLower(), JMBG = JMBG.Trim(), Username = Username.Trim().ToLower(), Password = Password.Trim(), Profit = 0 });
+                //UserManager.Users.Add(new Seller() { Id = 1, Name = Name.Trim().ToLower(), JMBG = JMBG.Trim(), Username = Username.Trim().ToLower(), Password = Password.Trim(), Profit = 0 });
                 onRegisterSuccess();
             }
         }

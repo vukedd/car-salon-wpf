@@ -25,7 +25,7 @@ namespace AutoSalonProject2024.ViewModels
         public CarBrand? CarBrand { get; set; }
         public string? ProductionYear { get; set; }
         public string? PurchasePrice { get; set; }
-        public DateTime? PurchaseDate { get; set; }
+        public DateTime PurchaseDate { get; set; } = DateTime.Now;
         public string? SalePrice { get; set; }
         public string? HorsePower { get; set; }
         public FuelType FuelType { get; set; }
@@ -52,8 +52,8 @@ namespace AutoSalonProject2024.ViewModels
         private void AddCarMethod(object obj)
         {
 
-            DateOnly date = DateOnly.FromDateTime(DateTime.Now);
-            _carService.AddCar(new Car(0, int.Parse(ProductionYear), int.Parse(HorsePower), false, decimal.Parse(PurchasePrice), date, decimal.Parse(SalePrice), CarModel, CarBrand, FuelType));
+            DateOnly date = DateOnly.FromDateTime(PurchaseDate);
+            _carService.AddCar(new Car(0, int.Parse(ProductionYear), int.Parse(HorsePower), false, decimal.Parse(PurchasePrice), date, CarModel, CarBrand, FuelType));
             Trace.WriteLine("Car succesfully added!");
             OnCarAdd();
         }

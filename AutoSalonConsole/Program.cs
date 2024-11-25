@@ -216,27 +216,6 @@ namespace AutoSalonConsole
             } while (!validPurchaseDateInput);
 
 
-            bool validSalePriceInput = false;
-            do
-            {
-                Console.WriteLine("\nEnter sale price:");
-                var input = Console.ReadLine();
-                if (input.ToLower() == "c")
-                {
-                    return;
-                }
-                if (decimal.TryParse(input, out decimal o))
-                {
-                    decimal salePriceInput = decimal.Parse(input);
-                    if ((salePriceInput - newCar.PurchasePrice) >= (newCar.PurchasePrice * (decimal)0.25))
-                    {
-                        newCar.SalePrice = salePriceInput;
-                        validSalePriceInput = true;
-                    }
-                }
-            } while (!validSalePriceInput);
-            newCar.Sold = false;
-
             bool validFuelTypeInput = false;
             do
             {
@@ -494,26 +473,6 @@ namespace AutoSalonConsole
                     } while (!validPurchaseDateInput);
                     break;
                 case 6:
-                    bool validSalePriceInput = false;
-                    do
-                    {
-                        Console.WriteLine("\nEnter sale price:");
-                        var input = Console.ReadLine();
-                        if (input.ToLower() == "c")
-                        {
-                            return;
-                        }
-                        if (decimal.TryParse(input, out decimal o))
-                        {
-                            decimal salePriceInput = decimal.Parse(input);
-                            if ((salePriceInput - car.PurchasePrice) >= (car.PurchasePrice * (decimal)0.25))
-                            {
-                                car.SalePrice = salePriceInput;
-                                validSalePriceInput = true;
-                            }
-                        }
-                    } while (!validSalePriceInput);
-                    car.Sold = false;
                     break;
                 case 7:
                     bool validFuelTypeInput = false;

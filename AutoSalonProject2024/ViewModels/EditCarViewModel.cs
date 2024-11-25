@@ -23,7 +23,6 @@ namespace AutoSalonProject2024.ViewModels
         public int? ProductionYear { get; set; }
         public decimal? PurchasePrice { get; set; }
         public DateTime? PurchaseDate { get; set; }
-        public decimal? SalePrice { get; set; }
         public int? HorsePower { get; set; }
         public FuelType FuelType { get; set; }
         // ---------------------- //
@@ -41,7 +40,6 @@ namespace AutoSalonProject2024.ViewModels
             CarBrand = car.Brand;
             ProductionYear = car.Year;
             PurchasePrice = car.PurchasePrice;
-            SalePrice = car.SalePrice;
             HorsePower = car.HorsePower;
             FuelType = car.FuelType;
             _carService = new CarService();
@@ -57,7 +55,6 @@ namespace AutoSalonProject2024.ViewModels
         private void editCarMet(object obj)
         {
             car.Year = ProductionYear.Value;
-            car.SalePrice = SalePrice.Value;
             car.PurchasePrice = PurchasePrice.Value;
             car.HorsePower = HorsePower.Value;
             car.Brand = CarBrand;

@@ -2,6 +2,7 @@
 using AutoSalonProject2024.Managers;
 using AutoSalonProject2024.Models;
 using AutoSalonProject2024.Views.SellerViews;
+using Core.Data;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -35,7 +36,7 @@ namespace AutoSalonProject2024.ViewModels
 
         private void AuthenticateUserMet(object obj)
         {
-            foreach (Seller u in UserManager.Users) 
+            foreach (Seller u in CSVResourceProvider.GetInstance().sellerList) 
             {
                 if (u.Username.ToLower() == Username.ToLower() && u.Password == Password)
                 {

@@ -5,25 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoSalonProject2024.Views.SellerViews.CarManageViews"
         mc:Ignorable="d"
-        Title="EditCarWindow" Height="700" Width="500" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Grid>
-        <TextBlock FontSize="40" Margin="130,10,100,100">Edit car</TextBlock>
-        <Label FontSize="15" Margin="50,70,50,50">Brand:</Label>
-        <ComboBox Width="100" Height="30" Margin="0,0,275,440" ItemsSource="{Binding Brands}" SelectionChanged="brandCombo_SelectionChanged" DisplayMemberPath="Name" Name="brandCombo" SelectedItem="{Binding CarBrand}"/>
-        <Label FontSize="15" Margin="250,70,50,50">Model:</Label>
-        <ComboBox Width="100" Height="30" Margin="125,0,0,440" DisplayMemberPath="Name" Name="modelsCombo" SelectedItem="{Binding CarModel}"/>
-        <Label FontSize="15" Margin="50,140,50,50">Year of production:</Label>
-        <TextBox Height="25" Width="80" Margin="0,0,295,300" Text="{Binding ProductionYear}"></TextBox>
-        <Label FontSize="15" Margin="250,140,50,50">Horse power:</Label>
-        <TextBox Height="25" Width="80" Margin="105,0,0,300" Text="{Binding HorsePower}"></TextBox>
-
-
-        <Label FontSize="15" Margin="250,202,50,50">Purchase price:</Label>
-        <Label FontSize="15" Margin="50,202,50,50" Content="Fuel type:"/>
-        <TextBox Height="25" Width="80" Margin="105, 130,0,300" Text="{Binding PurchasePrice}"></TextBox>
-        <Label FontSize="15" Margin="50,270,50,50">Sale price:</Label>
-        <TextBox Height="25" Width="80" Margin="0, 0,295,36" Text="{Binding SalePrice}"></TextBox>
-        <ComboBox Width="100" Height="30" Margin="-275,-140,0,30" Name="fuelType" SelectedItem="{Binding FuelType}"></ComboBox>
-        <Button Width="100" Height="30" Margin="0,100,0,0" Command="{Binding EditCar}">Submit changes</Button>
-    </Grid>
+        Title="EditCarWindow" Height="600" Width="500" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <StackPanel>
+        <TextBlock FontSize="40" Margin="170,0,0,0">Edit car</TextBlock>
+        <Label FontSize="15" Margin="210,0,0,0">Brand:</Label>
+        <ComboBox Width="100" Height="30" ItemsSource="{Binding Brands}" SelectionChanged="brandCombo_SelectionChanged" DisplayMemberPath="Name" Name="brandCombo" SelectedItem="{Binding CarBrand}"/>
+        <Label FontSize="15" Margin="205,0,0,0">Model:</Label>
+        <ComboBox Width="100" Height="30" DisplayMemberPath="Name" Name="modelsCombo" SelectedItem="{Binding CarModel}"/>
+        <Label FontSize="15" Margin="175,0,0,0">Year of production:</Label>
+        <TextBox Height="25" Width="80" Text="{Binding ProductionYear}"></TextBox>
+        <Label FontSize="15" Margin="190,0,0,0">Horse power:</Label>
+        <TextBox Height="25" Width="80" Text="{Binding HorsePower}"></TextBox>
+        <Label FontSize="15" Margin="185,0,0,0">Purchase price:</Label>
+        <TextBox Height="25" Width="120" Text="{Binding PurchasePrice}"></TextBox>
+        <Label FontSize="15" Margin="205,0,0,0" Content="Fuel type:"/>
+        <ComboBox Width="100" Height="30" Name="fuelType" SelectedItem="{Binding FuelType}"></ComboBox>
+        <Button Width="100" Height="30" Margin="0,50,0,0" Command="{Binding EditCar}">Submit changes</Button>
+    </StackPanel>
 </Window>

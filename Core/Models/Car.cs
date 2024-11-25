@@ -19,7 +19,6 @@ namespace AutoSalonProject2024.Models
         private bool _sold;
         private decimal _purchasePrice;
         private DateOnly? _purchaseDate;
-        private decimal _salePrice;
         private CarModel _model;
         private CarBrand _brand;
         private int _brandId;
@@ -111,19 +110,6 @@ namespace AutoSalonProject2024.Models
             }
         }
 
-        public decimal SalePrice
-        {
-            get => _salePrice;
-            set
-            {
-                if (_salePrice != value)
-                {
-                    _salePrice = value;
-                    OnPropertyChanged(nameof(SalePrice)); 
-                }
-            }
-        }
-
         public CarModel Model
         {
             get => _model;
@@ -189,7 +175,7 @@ namespace AutoSalonProject2024.Models
             }
         }
         public Car() { }
-        public Car(int Id, int Year, int HorsePower, bool Sold, decimal PurchasePrice, DateOnly PurchaseDate, decimal SalePrice, CarModel model, CarBrand brand, FuelType FuelType)
+        public Car(int Id, int Year, int HorsePower, bool Sold, decimal PurchasePrice, DateOnly PurchaseDate, CarModel model, CarBrand brand, FuelType FuelType)
         {
             this.Id = Id;
             this.Year = Year;
@@ -197,7 +183,6 @@ namespace AutoSalonProject2024.Models
             this.Sold = Sold;
             this.PurchasePrice = PurchasePrice;
             this.PurchaseDate = PurchaseDate;
-            this.SalePrice = SalePrice;
             this.Brand = brand;
             this.Model = model;
             this.ModelId = model.Id;
@@ -218,7 +203,6 @@ namespace AutoSalonProject2024.Models
             Sold = otherCar.Sold;
             PurchasePrice = otherCar.PurchasePrice;
             PurchaseDate = otherCar.PurchaseDate;
-            SalePrice = otherCar.SalePrice;
             Model = otherCar.Model;
             Brand = otherCar.Brand;
             BrandId = otherCar.BrandId;
@@ -232,12 +216,12 @@ namespace AutoSalonProject2024.Models
             {
                 sold = 0;
             }
-            return $"{this.Id}, {this.Year}, {this.HorsePower}, {sold}, {this.PurchasePrice}, {this.PurchaseDate}, {this.SalePrice}, {this.Model.Id}, {this.Brand.Id}, {(int)(this.FuelType)}";
+            return $"{this.Id}, {this.Year}, {this.HorsePower}, {sold}, {this.PurchasePrice}, {this.PurchaseDate}, {this.Model.Id}, {this.Brand.Id}, {(int)(this.FuelType)}";
         }
 
         public string toDisplay()
         {
-            return $"{this.Id}, {this.Year}, {this.HorsePower}, {this.PurchasePrice}, {this.PurchaseDate}, {this.SalePrice}, {this.Model.Name}, {this.Brand.Name}, {(this.FuelType)}";
+            return $"{this.Id}, {this.Year}, {this.HorsePower}, {this.PurchasePrice}, {this.PurchaseDate}, {this.Model.Name}, {this.Brand.Name}, {(this.FuelType)}";
         }
 
     }

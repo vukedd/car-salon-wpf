@@ -6,14 +6,14 @@
         xmlns:local="clr-namespace:AutoSalonProject2024.Views.SellerViews.CarManageViews"
         mc:Ignorable="d"
         Title="SaleWindow" Height="550" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    <Grid>
-        <TextBlock FontSize="40" Margin="90,-5,0,0">Create Sale</TextBlock>
-        <Label FontSize="15" Margin="110,55,20,20">Sale price:</Label>
-        <TextBox Margin="-15,-320,0,0"  Height="20" Width="140"></TextBox>
-        <Label FontSize="15" Margin="110,115,20,20">Buyer name:</Label>
-        <TextBox Margin="-15,-200,0,0"  Height="20" Width="140"></TextBox>
-        <Label FontSize="15" Margin="110,175,20,20">Buyer Id number:</Label>
-        <TextBox Margin="-15,-80,0,0"  Height="20" Width="140"></TextBox>
-        <Button FontSize="15" Height="30" Width="100" Margin="-20,30,0,0">Sell car</Button>
-    </Grid>
+    <StackPanel>
+        <TextBlock FontSize="40">Create Sale</TextBlock>
+        <Label FontSize="15">Sale price:</Label>
+        <TextBox Height="20" Width="140" Name="SalePrice" Text="{Binding SalePrice}"></TextBox>
+        <Label FontSize="15">Buyer name:</Label>
+        <TextBox Height="20" Width="140" Name="BuyerName" Text="{Binding BuyerFullName}"></TextBox>
+        <Label FontSize="15" >Buyer Id number:</Label>
+        <TextBox Height="20" Width="140" Name="BuyerIdNumber" Text="{Binding BuyerIdNumber}"></TextBox>
+        <Button FontSize="15" Height="30" Width="100" Command="{Binding CreateSale}">Sell car</Button>
+    </StackPanel>
 </Window>

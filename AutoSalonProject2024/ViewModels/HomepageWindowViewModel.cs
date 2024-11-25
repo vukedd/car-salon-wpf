@@ -18,7 +18,7 @@ namespace AutoSalonProject2024.ViewModels
     public class HomepageWindowViewModel
     {
         public static ObservableCollection<Car> Cars { get; set; }
-        public static Seller Seller { get; set; } = null;
+        public static Seller Seller { get; set; }
         private ICarService _carService { get; set; }
         public HomepageWindowViewModel()
         {

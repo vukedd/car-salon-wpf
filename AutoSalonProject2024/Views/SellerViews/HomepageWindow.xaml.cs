@@ -31,8 +31,6 @@ namespace AutoSalonProject2024.Views.SellerViews
             InitializeComponent();
             homePageViewModel = new HomepageWindowViewModel();
             this.DataContext = homePageViewModel;
-            WelcomeMsg.Text = "Welcome, " + HomepageWindowViewModel.Seller.Username;
-            Balance.Text = "Profit: " + HomepageWindowViewModel.Seller.Profit;
         }
 
         private void AddNewButton_Click(object sender, RoutedEventArgs e)

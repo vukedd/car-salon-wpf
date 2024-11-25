@@ -3,7 +3,9 @@ using AutoSalonProject2024.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,7 +20,12 @@ namespace Core.Data
         public ObservableCollection<CarModel> modelsList { get; } = new ObservableCollection<CarModel>();
         public ObservableCollection<CarBrand> brandsList { get; } = new ObservableCollection<CarBrand>();
         public ObservableCollection<Country> countriesList { get; } = new ObservableCollection<Country>();
+        public ObservableCollection<Seller> sellerList { get; } = new ObservableCollection<Seller>();
+        public ObservableCollection<Transaction> transactionList { get; } = new ObservableCollection<Transaction>();
+
         public int lastId { get; set; } = 0;
+        public int lastUserId { get; set; } = 0;
+        public int lastTransactionId { get; set; } = 0;
         private CSVResourceProvider()
         {
             LoadData();
@@ -47,6 +54,8 @@ namespace Core.Data
             string[] brands = File.ReadAllLines(Path.Combine(projectDirectory) + "\\Core\\Data\\CarBrands.csv");
             string[] models = File.ReadAllLines(Path.Combine(projectDirectory) + "\\Core\\Data\\CarModels.csv");
             string[] countries = File.ReadAllLines(Path.Combine(projectDirectory) + "\\Core\\Data\\Countries.csv");
+            string[] users = File.ReadAllLines(Path.Combine(projectDirectory) + "\\Core\\Data\\Sellers.csv");
+            string[] transactions = File.ReadAllLines(Path.Combine(projectDirectory) + "\\Core\\Data\\Transactions.csv");
 
             foreach (string country in countries)
             {
@@ -87,24 +96,66 @@ namespace Core.Data
                 bool sold = true ? int.Parse(carData[3]) == 0 : false;
                 decimal purchasePrice = decimal.Parse(carData[4]);
                 DateOnly purchaseDate = DateOnly.Parse(carData[5]);
-                decimal salePrice = decimal.Parse(carData[6]);
-                CarModel model = modelsList.Where(m => m.Id == int.Parse(carData[7])).FirstOrDefault();
-                CarBrand brand = brandsList.Where(b => b.Id == int.Parse(carData[8])).FirstOrDefault();
-                FuelType fuelType = (FuelType)int.Parse(carData[9]);
+                CarModel model = modelsList.Where(m => m.Id == int.Parse(carData[6])).FirstOrDefault();
+                CarBrand brand = brandsList.Where(b => b.Id == int.Parse(carData[7])).FirstOrDefault();
+                FuelType fuelType = (FuelType)int.Parse(carData[8]);
+
+                Car newCar = new Car(id, year, horsePower, sold, purchasePrice, purchaseDate, model, brand, fuelType);
+                carsList.Add(newCar);
 
                 if (id > lastId)
                 {
                     lastId = id;
                 }
-
-                Car newCar = new Car(id, year, horsePower, sold, purchasePrice, purchaseDate, salePrice, model, brand, fuelType);
-                carsList.Add(newCar);
             }
+
+            foreach (string user in users)
+            {
+                Trace.WriteLine(user);
+                string[] userData = user.Split(",");
+                Trace.WriteLine(userData[5]);
+                int id = int.Parse(userData[0]);
+                string name = userData[1];
+                string username = userData[2];
+                string password = userData[3];
+                string jMBG = userData[4];
+                decimal profit = decimal.Parse(userData[5]);
+                Seller seller = new Seller(id, name, username, password, jMBG, profit);
+                sellerList.Add(seller);
+
+                if (id > lastUserId)
+                {
+                    lastUserId = id;
+                }
+            }
+
+            foreach (string transaction in transactions)
+            {
+                string[] transacData = transaction.Split(",");
+                int id = int.Parse(transacData[0]);
+                Seller seller = sellerList.Where(s => s.Id == int.Parse(transacData[1])).FirstOrDefault();
+                Car car = carsList.Where(c => c.Id == int.Parse(transacData[2])).FirstOrDefault();
+                string buyerName = transacData[3];
+                string buyerIdNum = transacData[4];
+                decimal salePrice = decimal.Parse(transacData[5]);
+                DateOnly saleDate = DateOnly.Parse(transacData[6]);
+
+                Transaction newTransac = new Transaction(id, seller, car, buyerName, buyerIdNum, salePrice, saleDate);
+                transactionList.Add(newTransac);
+
+                if (id > lastTransactionId)
+                {
+                    lastTransactionId = id;
+                }
+            }
+
+
         }
 
         public void SaveData()
         {
             string projectDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName;
+
             List<string> cars = new List<string>();
             foreach (var item in carsList)
             {
@@ -114,6 +165,24 @@ namespace Core.Data
 
             File.WriteAllLines(Path.Combine(projectDirectory) + "\\Core\\Data\\Cars.csv", cars);
             Console.WriteLine("Car saved succesfully");
+
+            List<string> users = new List<string>();
+            foreach (var item in sellerList) 
+            {
+                users.Add(item.toCsv());
+            }
+
+            File.WriteAllLines(Path.Combine(projectDirectory) + "\\Core\\Data\\Sellers.csv", users);
+            Console.WriteLine("Users saved succesfully");
+
+            List<string> transactions = new List<string>();
+            foreach (var item in transactionList)
+            {
+                transactions.Add(item.toCsv());
+            }
+
+            File.WriteAllLines(Path.Combine(projectDirectory) + "\\Core\\Data\\Transactions.csv", transactions);
+            Console.WriteLine("Transaction saved succesfully");
         }
     }
 }
