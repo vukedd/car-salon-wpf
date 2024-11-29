@@ -14,12 +14,15 @@
                 <MenuItem Header="_Exit" Click="ExitMenuItem_Click"></MenuItem>
             </MenuItem>
         </Menu>
-        <ToolBarTray Height="40" Margin="0, -573, 0, 0">
+        <ToolBarTray Height="40" Margin="0, -573, 0, 0" IsLocked="True">
             <ToolBar Margin="0,0,0,0" Width="1100" Height="40" Background="LightGray">
                 <Button Width="100" Height="40" Margin="0, 0, 0, 0" Content="Add new car" Click="AddNewButton_Click"/>
                 <Button Width="100" Height="40" Margin="0, 0, 0, 0" Content="Edit car" Click="EditButton_Click"/>
                 <Button Width="100" Height="40" Margin="0, 0, 0, 0" Content="Delete car" Click="DeleteButton_Click"/>
                 <Button Width="100" Height="40" Margin="0, 0, 0, 0" Content="Sell car" Click="SaleButton_Click"/>
+                <Separator/>
+                <Button Width="100" Height="40" Margin="0,0,0,0" Content="Show sales"></Button>
+                <Separator/>
                 <Button Width="100" Height="40" Margin="0, 0, 0, 0" Content="Countries"/>
                 <Button Width="100" Height="40" Margin="0, 0, 0, 0" Content="Brands"/>
                 <Button Width="100" Height="40" Margin="0, 0, 0, 0" Content="Models"/>

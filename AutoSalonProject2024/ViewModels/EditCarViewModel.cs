@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace AutoSalonProject2024.ViewModels
 {
@@ -20,15 +21,16 @@ namespace AutoSalonProject2024.ViewModels
         private Car car;
         public CarModel? CarModel { get; set; }
         public CarBrand? CarBrand { get; set; }
-        public int? ProductionYear { get; set; }
-        public decimal? PurchasePrice { get; set; }
+        public string? ProductionYear { get; set; }
+        public string? PurchasePrice { get; set; }
         public DateTime? PurchaseDate { get; set; }
-        public int? HorsePower { get; set; }
+        public string? HorsePower { get; set; }
         public FuelType FuelType { get; set; }
         // ---------------------- //
         public ObservableCollection<CarBrand> Brands { get; set; }
         public ObservableCollection<CarModel> Models { get; set; }
-        public ICommand EditCar { get; set;}
+        public ICommand EditCar { get; set; }
+        public event EventHandler CarEditError;
         public event EventHandler CarEditEvent;
         private ICarService _carService;
 
@@ -38,9 +40,9 @@ namespace AutoSalonProject2024.ViewModels
             EditCar = new RelayCommand(editCarMet, canEditCar);
             CarModel = car.Model;
             CarBrand = car.Brand;
-            ProductionYear = car.Year;
-            PurchasePrice = car.PurchasePrice;
-            HorsePower = car.HorsePower;
+            ProductionYear = car.Year.ToString();
+            PurchasePrice = car.PurchasePrice.ToString();
+            HorsePower = car.HorsePower.ToString();
             FuelType = car.FuelType;
             _carService = new CarService();
 
@@ -54,18 +56,75 @@ namespace AutoSalonProject2024.ViewModels
 
         private void editCarMet(object obj)
         {
-            car.Year = ProductionYear.Value;
-            car.PurchasePrice = PurchasePrice.Value;
-            car.HorsePower = HorsePower.Value;
-            car.Brand = CarBrand;
-            car.Model = CarModel;
-            car.FuelType = FuelType;
-            _carService.EditCar(car.Id, car);
-            onCarEdit();
+            if (ProductionYear != "" && HorsePower != "" && PurchasePrice != "")
+            {
+                if (validateCarDetails(int.Parse(ProductionYear), int.Parse(HorsePower), decimal.Parse(PurchasePrice), CarModel, CarBrand))
+                {
+                    car.Year = int.Parse(ProductionYear);
+                    car.PurchasePrice = decimal.Parse(PurchasePrice);
+                    car.HorsePower = int.Parse(HorsePower);
+                    car.Brand = CarBrand;
+                    car.Model = CarModel;
+                    car.FuelType = FuelType;
+                    _carService.EditCar(car.Id, car);
+                    onCarEdit();
+                }
+            }
+            else
+            {
+                OnCarEditError();
+            }
         }
 
         private void onCarEdit() {
             CarEditEvent?.Invoke(this, EventArgs.Empty);
+        }
+
+        public void OnCarEditError()
+        {
+            CarEditError?.Invoke(this, EventArgs.Empty);
+        }
+
+        private bool validateCarDetails(int? year, int? horsePower, decimal? purchasePrice, CarModel model, CarBrand brand)
+        {
+            if (year != null && horsePower != null && purchasePrice != null && model != null && brand != null)
+            {
+                if (year < 1950 || year > 2025)
+                {
+                    Console.WriteLine("Year must be between 1950 and 2025.");
+                    return false;
+                }
+
+                if (horsePower < 50 || horsePower > 1000)
+                {
+                    Console.WriteLine("Horsepower must be between 50 and 1000.");
+                    return false;
+                }
+
+                if (purchasePrice <= 0 || purchasePrice > 5000000)
+                {
+                    Console.WriteLine("Purchase price must be greater than 0 and less than 5 million.");
+                    return false;
+                }
+
+                if (model == null)
+                {
+                    Console.WriteLine("Car model cannot be null.");
+                    return false;
+                }
+
+                if (brand == null)
+                {
+                    Console.WriteLine("Car brand cannot be null.");
+                    return false;
+                }
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

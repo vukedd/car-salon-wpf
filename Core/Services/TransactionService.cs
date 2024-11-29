@@ -22,6 +22,7 @@ namespace Core.Services
         {
             transaction.Car.Sold = true;
             transaction.Seller.Profit += (decimal)(transaction.SalePrice - transaction.Car.PurchasePrice);
+            transaction.Seller.Sales.Add(transaction);
             _transactionRepository.AddTransaction(transaction);
         }
     }

@@ -41,6 +41,10 @@ namespace AutoSalonProject2024.ViewModels
         {
             Transaction transaction = new Transaction(Seller, Car, BuyerFullName, BuyerIdNumber, (decimal)SalePrice);
             _transactionService.AddTransaction(transaction);
+            foreach (Transaction t in Seller.Sales) 
+            { 
+                Trace.WriteLine(t.Car.Model.Name);
+            }
         }
     }
 }

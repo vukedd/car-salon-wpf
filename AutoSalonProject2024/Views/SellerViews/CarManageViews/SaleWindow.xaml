@@ -7,13 +7,13 @@
         mc:Ignorable="d"
         Title="SaleWindow" Height="550" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <StackPanel>
-        <TextBlock FontSize="40">Create Sale</TextBlock>
-        <Label FontSize="15">Sale price:</Label>
+        <TextBlock FontSize="40" Margin="90,0,0,0">Create Sale</TextBlock>
+        <Label FontSize="15" Margin="150,0,0,0">Sale price:</Label>
         <TextBox Height="20" Width="140" Name="SalePrice" Text="{Binding SalePrice}"></TextBox>
-        <Label FontSize="15">Buyer name:</Label>
+        <Label FontSize="15" Margin="150,0,0,0">Buyer name:</Label>
         <TextBox Height="20" Width="140" Name="BuyerName" Text="{Binding BuyerFullName}"></TextBox>
-        <Label FontSize="15" >Buyer Id number:</Label>
+        <Label FontSize="15" Margin="130,0,0,0">Buyer Id number:</Label>
         <TextBox Height="20" Width="140" Name="BuyerIdNumber" Text="{Binding BuyerIdNumber}"></TextBox>
-        <Button FontSize="15" Height="30" Width="100" Command="{Binding CreateSale}">Sell car</Button>
+        <Button FontSize="15" Height="30" Width="100" Margin="0,20,0,0" Command="{Binding CreateSale}">Sell car</Button>
     </StackPanel>
 </Window>

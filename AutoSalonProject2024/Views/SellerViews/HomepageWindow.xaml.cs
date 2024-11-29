@@ -49,7 +49,7 @@ namespace AutoSalonProject2024.Views.SellerViews
             }
             else
             {
-                MessageBox.Show("Please select a vehicle!");
+                MessageBox.Show("Please select vehicle!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -71,7 +71,7 @@ namespace AutoSalonProject2024.Views.SellerViews
             }
             else
             {
-                MessageBox.Show(this, "Car must be selected!", "Error");
+                MessageBox.Show("Please select vehicle!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -100,7 +100,7 @@ namespace AutoSalonProject2024.Views.SellerViews
             }
             else
             {
-                MessageBox.Show(this, "Select a car for sale!", "Error");
+                MessageBox.Show("Please select vehicle for sale!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
     }

@@ -5,21 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoSalonProject2024.Views.SellerViews.CarManageViews"
         mc:Ignorable="d"
-        Title="EditCarWindow" Height="600" Width="500" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="EditCarWindow" Height="750" Width="500" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <StackPanel>
         <TextBlock FontSize="40" Margin="170,0,0,0">Edit car</TextBlock>
         <Label FontSize="15" Margin="210,0,0,0">Brand:</Label>
-        <ComboBox Width="100" Height="30" ItemsSource="{Binding Brands}" SelectionChanged="brandCombo_SelectionChanged" DisplayMemberPath="Name" Name="brandCombo" SelectedItem="{Binding CarBrand}"/>
+        <ComboBox Width="100" Height="25" ItemsSource="{Binding Brands}" SelectionChanged="brandCombo_SelectionChanged" DisplayMemberPath="Name" Name="brandCombo" SelectedItem="{Binding CarBrand}"/>
+        <Label Foreground="red" Margin="120,0,0,0" Visibility="Hidden" Name="CarBrandValidationLabel">Car brand must be selected!</Label>
         <Label FontSize="15" Margin="205,0,0,0">Model:</Label>
-        <ComboBox Width="100" Height="30" DisplayMemberPath="Name" Name="modelsCombo" SelectedItem="{Binding CarModel}"/>
+        <ComboBox Width="100" Height="25" DisplayMemberPath="Name" Name="modelsCombo" SelectedItem="{Binding CarModel}"/>
+        <Label Foreground="red" Margin="120,0,0,0" Visibility="Hidden" Name="CarModelValidationLabel">Car model must be selected!</Label>
         <Label FontSize="15" Margin="175,0,0,0">Year of production:</Label>
-        <TextBox Height="25" Width="80" Text="{Binding ProductionYear}"></TextBox>
+        <TextBox Height="20" Width="80" Text="{Binding ProductionYear}" PreviewTextInput="TextBox_PreviewTextInput" TextChanged="ProductionYearTB_TextChanged" Name="ProductionYearTB"></TextBox>
+        <Label Foreground="red" Margin="120,0,0,0" Visibility="Hidden" Name="ProductionYearValidationLabel">Production year must be between 1950 and 2025</Label>
         <Label FontSize="15" Margin="190,0,0,0">Horse power:</Label>
-        <TextBox Height="25" Width="80" Text="{Binding HorsePower}"></TextBox>
+        <TextBox Height="20" Width="80" Text="{Binding HorsePower}" PreviewTextInput="TextBox_PreviewTextInput" TextChanged="HorsePower_TextChanged" Name="HorsePowerTB"></TextBox>
+        <Label Foreground="red" Margin="120,0,0,0" Visibility="Hidden" Name="HorsePowerValidationLabel">*Horse power must be from 50 to 1000</Label>
         <Label FontSize="15" Margin="185,0,0,0">Purchase price:</Label>
-        <TextBox Height="25" Width="120" Text="{Binding PurchasePrice}"></TextBox>
+        <TextBox Height="20" Width="120" Text="{Binding PurchasePrice}" PreviewTextInput="TextBox_PreviewTextInput" TextChanged="PurchasePrice_TextChanged" Name="PurchasePriceTB"></TextBox>
+        <Label Foreground="red" Margin="120,0,0,0" Visibility="Hidden" Name="PurchasePriceValidationLabel">*Purchase price must be greater than 0 and less than 5 mil.</Label>
         <Label FontSize="15" Margin="205,0,0,0" Content="Fuel type:"/>
-        <ComboBox Width="100" Height="30" Name="fuelType" SelectedItem="{Binding FuelType}"></ComboBox>
-        <Button Width="100" Height="30" Margin="0,50,0,0" Command="{Binding EditCar}">Submit changes</Button>
+        <ComboBox Width="100" Height="25" Name="fuelType" SelectedItem="{Binding FuelType}"></ComboBox>
+        <Label Foreground="red" Margin="120,0,0,0" Visibility="Hidden" Name="FuelTypeValidationLabel">FuelType must be selected!</Label>
+        <Button Width="100" Height="25" Margin="0,50,0,0" Command="{Binding EditCar}">Submit changes</Button>
     </StackPanel>
 </Window>
