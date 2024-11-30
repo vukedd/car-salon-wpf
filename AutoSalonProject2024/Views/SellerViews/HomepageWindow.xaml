@@ -26,6 +26,7 @@
                 <Button Width="100" Height="40" Margin="0, 0, 0, 0" Content="Countries"/>
                 <Button Width="100" Height="40" Margin="0, 0, 0, 0" Content="Brands"/>
                 <Button Width="100" Height="40" Margin="0, 0, 0, 0" Content="Models"/>
+                <Label Margin="60,5,0,0" FontSize="12">Search: </Label><TextBox Margin="0,0,0,0" Width="150" Height="30" ></TextBox>
             </ToolBar>
         </ToolBarTray>
         <TextBlock FontSize="30" Margin="440, 70,100,100" Name="WelcomeMsg" Text="{Binding Seller.Username}"></TextBlock>

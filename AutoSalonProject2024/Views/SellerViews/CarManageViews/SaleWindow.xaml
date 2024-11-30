@@ -9,11 +9,14 @@
     <StackPanel>
         <TextBlock FontSize="40" Margin="90,0,0,0">Create Sale</TextBlock>
         <Label FontSize="15" Margin="150,0,0,0">Sale price:</Label>
-        <TextBox Height="20" Width="140" Name="SalePrice" Text="{Binding SalePrice}"></TextBox>
+        <TextBox Height="20" Width="140" Name="SalePrice" Text="{Binding SalePrice}" PreviewTextInput="SalePrice_PreviewTextInput" TextChanged="SalePrice_TextChanged"></TextBox>
+        <Label Margin="50,0,0,0" Foreground="Red" FontSize="10" Visibility="Hidden" Name="SalePriceValidationLabel">Sale price must be at least 25% greater than the purchase price</Label>
         <Label FontSize="15" Margin="150,0,0,0">Buyer name:</Label>
-        <TextBox Height="20" Width="140" Name="BuyerName" Text="{Binding BuyerFullName}"></TextBox>
+        <TextBox Height="20" Width="140" Name="BuyerName" Text="{Binding BuyerFullName}" TextChanged="BuyerName_TextChanged"></TextBox>
+        <Label Margin="30,0,0,0" FontSize="10" Foreground="Red" Visibility="Hidden" Name="BuyerNameValidationLabel">Buyer name cannot containt numbers and must be 3-20 characters long</Label>
         <Label FontSize="15" Margin="130,0,0,0">Buyer Id number:</Label>
-        <TextBox Height="20" Width="140" Name="BuyerIdNumber" Text="{Binding BuyerIdNumber}"></TextBox>
+        <TextBox Height="20" Width="140" Name="BuyerIdNumber" Text="{Binding BuyerIdNumber}" TextChanged="BuyerIdNumber_TextChanged" PreviewTextInput="BuyerId_PreviewTextInput"></TextBox>
+        <Label Foreground="Red" Margin="110,0,0,0" Visibility="Hidden" Name="IdNumValidationLabel">Id number must contain 9 digits</Label>
         <Button FontSize="15" Height="30" Width="100" Margin="0,20,0,0" Command="{Binding CreateSale}">Sell car</Button>
     </StackPanel>
 </Window>
