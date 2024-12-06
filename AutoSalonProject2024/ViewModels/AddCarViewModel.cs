@@ -37,11 +37,16 @@ namespace AutoSalonProject2024.ViewModels
         public ObservableCollection<CarModel> Models { get; set; }
         public ICommand AddCar { get; set; }
         private ICarService _carService { get; set; }
+        private ICarBrandService _carBrandService;
+        private ICarModelService _carModelService;
         public AddCarViewModel()
         {
+            _carBrandService = new CarBrandService();
+            _carModelService = new CarModelService();
+
             AddCar = new RelayCommand(AddCarMethod, CanAddCar);
-            Brands = CSVResourceProvider.GetInstance().brandsList;
-            Models = CSVResourceProvider.GetInstance().modelsList;
+            Brands = _carBrandService.GetAllBrands();
+            Models = _carModelService.GetAllModels();
             _carService = new CarService();
         }
 
@@ -58,7 +63,6 @@ namespace AutoSalonProject2024.ViewModels
                 if (validateCarDetails(int.Parse(ProductionYear), int.Parse(HorsePower), decimal.Parse(PurchasePrice), CarModel, CarBrand))
                 {
                     _carService.AddCar(new Car(0, int.Parse(ProductionYear), int.Parse(HorsePower), false, decimal.Parse(PurchasePrice), date, CarModel, CarBrand, FuelType));
-                    Trace.WriteLine("Car succesfully added!");
                     OnCarAdd();
                 }
             }

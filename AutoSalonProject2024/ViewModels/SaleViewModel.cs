@@ -47,14 +47,10 @@ namespace AutoSalonProject2024.ViewModels
 
         private void createSaleMet(object obj)
         {
-            if ((BuyerFullName != null && (BuyerFullName.Trim().Length > 2 && BuyerFullName.Trim().Length < 21)) && (BuyerIdNumber != null && BuyerIdNumber.Trim().Length == 9) && (SalePrice != null && decimal.TryParse(SalePrice, null, out decimal result) && (result - Car.PurchasePrice > ((decimal)0.25 * Car.PurchasePrice))))
+            if ((BuyerFullName != null && (BuyerFullName.Trim().Length > 2 && BuyerFullName.Trim().Length < 21)) && (BuyerIdNumber != null && BuyerIdNumber.Trim().Length == 9) && (SalePrice != null && decimal.TryParse(SalePrice, null, out decimal result) && result > 500))
             {
                 Transaction transaction = new Transaction(Seller, Car, BuyerFullName, BuyerIdNumber, decimal.Parse(SalePrice));
                 _transactionService.AddTransaction(transaction);
-                foreach (Transaction t in Seller.Sales)
-                {
-                    Trace.WriteLine(t.Car.Model.Name);
-                }
                 onSaleSuccess();
             } 
             else

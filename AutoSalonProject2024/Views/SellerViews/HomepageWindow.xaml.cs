@@ -4,6 +4,7 @@ using AutoSalonProject2024.Views.SellerViews.CarManageViews;
 using Core.Data;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -25,7 +26,7 @@ namespace AutoSalonProject2024.Views.SellerViews
     /// </summary>
     public partial class HomepageWindow : Window
     {
-        HomepageWindowViewModel homePageViewModel;
+        private HomepageWindowViewModel homePageViewModel;
         public HomepageWindow()
         {
             InitializeComponent();
@@ -50,7 +51,7 @@ namespace AutoSalonProject2024.Views.SellerViews
             else
             {
                 MessageBox.Show("Please select vehicle!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
-            }
+            }            
         }
 
         private void ExitMenuItem_Click(object sender, RoutedEventArgs e)
@@ -67,6 +68,7 @@ namespace AutoSalonProject2024.Views.SellerViews
                 {
                     Car car = (Car)CarListView.SelectedItem;
                     homePageViewModel.DeleteCar(car.Id);
+                    HomepageWindowViewModel.Cars.Remove(car);
                 }
             }
             else

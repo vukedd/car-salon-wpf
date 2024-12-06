@@ -2,6 +2,8 @@
 using Core.IRepositories;
 using Core.IServices;
 using Core.Repositories;
+using Core.Repositories.CSVRepositories;
+using Core.Repositories.DBRepositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,13 +18,10 @@ namespace Core.Services
         private ITransactionRepository _transactionRepository;
         public TransactionService()
         {
-            _transactionRepository = new TransactionRepository();
+            _transactionRepository = new TransactionRepositoryDB();
         }
         public void AddTransaction(Transaction transaction)
         {
-            transaction.Car.Sold = true;
-            transaction.Seller.Profit += (decimal)(transaction.SalePrice - transaction.Car.PurchasePrice);
-            transaction.Seller.Sales.Add(transaction);
             _transactionRepository.AddTransaction(transaction);
         }
     }

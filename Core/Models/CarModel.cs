@@ -20,7 +20,11 @@ namespace AutoSalonProject2024.Models
             this.Brand = Brand;
             this.BrandId = Brand.Id;
         }
-        
+
+        public CarModel()
+        {
+        }
+
         public string ToCSV()
         {
             return $"{Id}. {Name}";

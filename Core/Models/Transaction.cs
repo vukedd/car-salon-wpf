@@ -147,7 +147,7 @@ namespace AutoSalonProject2024.Models
             this.DateOfTransaction = DateOnly.FromDateTime(DateTime.Now);
         }
 
-        internal string toCsv()
+        public string toCsv()
         {
             return $"{Id},{Seller.Id},{Car.Id},{BuyerFullName},{BuyerIdNumber},{SalePrice},{DateOfTransaction}";
         }

@@ -22,6 +22,10 @@ namespace AutoSalonProject2024.Models
             this.CountryId = country.Id;
         }
 
+        public CarBrand()
+        {
+        }
+
         public string ToCSV()
         {
             return $"{Id}. {Name}";

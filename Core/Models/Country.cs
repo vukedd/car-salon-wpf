@@ -16,5 +16,10 @@ namespace AutoSalonProject2024.Models
             this.Id = Id;
             this.Name = Name;
         }
+
+        public Country()
+        {
+
+        }
     }
 }

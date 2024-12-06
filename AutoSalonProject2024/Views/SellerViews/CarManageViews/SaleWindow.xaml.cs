@@ -64,9 +64,7 @@ namespace AutoSalonProject2024.Views.SellerViews.CarManageViews
             decimal purchasePrice = _carForSale.PurchasePrice;
             if (SalePrice.Text != null && int.TryParse(SalePrice.Text, null, out int result))
             {
-                Trace.WriteLine(result - purchasePrice);
-                Trace.WriteLine(purchasePrice * (decimal)(0.25));
-                if (result - purchasePrice >= (int)(purchasePrice * (decimal)0.25))
+                if (result >= 500)
                 {
                     SalePriceValidationLabel.Visibility = Visibility.Hidden;
                 }

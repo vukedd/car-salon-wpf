@@ -33,6 +33,8 @@ namespace AutoSalonProject2024.ViewModels
         public event EventHandler CarEditError;
         public event EventHandler CarEditEvent;
         private ICarService _carService;
+        private ICarBrandService _carBrandService;
+        private ICarModelService _carModelService;
 
         public EditCarViewModel(Car car)
         {
@@ -45,9 +47,11 @@ namespace AutoSalonProject2024.ViewModels
             HorsePower = car.HorsePower.ToString();
             FuelType = car.FuelType;
             _carService = new CarService();
+            _carBrandService = new CarBrandService();
+            _carModelService = new CarModelService();
+            Brands = _carBrandService.GetAllBrands();
+            Models = _carModelService.GetAllModels();
 
-            Brands = CSVResourceProvider.GetInstance().brandsList;
-            Models = CSVResourceProvider.GetInstance().modelsList;
         }
         private bool canEditCar(object obj)
         {

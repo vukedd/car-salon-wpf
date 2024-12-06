@@ -31,6 +31,7 @@ namespace AutoSalonProject2024.Views.SellerViews.CarManageViews
             InitializeComponent();
             addCarViewModel = new AddCarViewModel();
             this.DataContext = addCarViewModel;
+
             fuelType.ItemsSource = Enum.GetValues(typeof(FuelType));
             addCarViewModel.carAdded += OnCarAdded;
             addCarViewModel.carAddError += OnCarAddError;

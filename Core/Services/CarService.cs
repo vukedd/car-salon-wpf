@@ -2,6 +2,7 @@
 using Core.IRepositories;
 using Core.IServices;
 using Core.Repositories;
+using Core.Repositories.DBRepositories;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -16,7 +17,7 @@ namespace Core.Services
         private ICarRepository _carRepository;
         public CarService()
         {
-            _carRepository = new CarRepository();        
+            _carRepository = new CarRepositoryDB();        
         }
 
         public void AddCar(Car Car)

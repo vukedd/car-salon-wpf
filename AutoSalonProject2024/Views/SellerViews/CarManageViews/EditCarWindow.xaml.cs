@@ -39,15 +39,10 @@ namespace AutoSalonProject2024.Views.SellerViews.CarManageViews
             editCarViewModel.CarEditEvent += onCarEdit;
             editCarViewModel.CarEditError += onCarEditError;
 
-            brandCombo.SelectedItem = car.Brand;
-            carModels = new ObservableCollection<CarModel>();
-            foreach (CarModel model in editCarViewModel.Models) 
-            {
-                if (model.Brand.Id == car.BrandId)
-                {
-                    carModels.Add(model);
-                }
-            }
+            brandCombo.SelectedItem = editCarViewModel.Brands.Where(b => b.Id == car.Brand.Id).FirstOrDefault();
+            carModels = new ObservableCollection<CarModel>(
+                editCarViewModel.Models.Where(model => model.Brand.Id == editCarViewModel.CarBrand.Id).ToList()
+            );
             modelsCombo.ItemsSource = carModels;
             this.DataContext = editCarViewModel;
         }
@@ -122,6 +117,9 @@ namespace AutoSalonProject2024.Views.SellerViews.CarManageViews
                     HorsePowerValidationLabel.Visibility = Visibility.Hidden;
                 }
             }
+
+            modelsCombo.SelectedItem = editCarViewModel.Models.Where(m => m.Id == editCarViewModel.CarModel.Id).FirstOrDefault();
+
         }
 
         private void PurchasePrice_TextChanged(object sender, TextChangedEventArgs e)

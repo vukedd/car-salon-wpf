@@ -3,6 +3,8 @@ using AutoSalonProject2024.Managers;
 using AutoSalonProject2024.Models;
 using AutoSalonProject2024.Views.SellerViews;
 using Core.Data;
+using Core.IServices;
+using Core.Services;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -20,6 +22,7 @@ namespace AutoSalonProject2024.ViewModels
         public event EventHandler AuthenticationSuccess;
         public event EventHandler AuthenticationFailure;
 
+        private ISellerService _sellerService;
         public ICommand AuthenticateUser { get; set; }
         public string? Username { get; set; }
         public string? Password { private get; set; }
@@ -27,6 +30,7 @@ namespace AutoSalonProject2024.ViewModels
         public LoginViewModel()
         {
             AuthenticateUser = new RelayCommand(AuthenticateUserMet, CanAuthenticateUser);
+            _sellerService = new SellerService();
         }
 
         private bool CanAuthenticateUser(object obj)
@@ -36,14 +40,12 @@ namespace AutoSalonProject2024.ViewModels
 
         private void AuthenticateUserMet(object obj)
         {
-            foreach (Seller u in CSVResourceProvider.GetInstance().sellerList) 
+            Seller seller = _sellerService.AuthenticateSeller(Username, Password);
+            if (seller != null)
             {
-                if (u.Username.ToLower() == Username.ToLower() && u.Password == Password)
-                {
-                    HomepageWindowViewModel.Seller = u;
-                    OnAuthenticationSuccess();
-                    return;
-                }
+                HomepageWindowViewModel.Seller = seller;
+                OnAuthenticationSuccess();
+                return;
             }
 
             OnAuthenticationFailure();
