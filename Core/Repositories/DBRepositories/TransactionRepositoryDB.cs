@@ -31,7 +31,6 @@ namespace Core.Repositories.DBRepositories
                     SqlCommand command1 = new SqlCommand();
                     command1.CommandText = commandText1;
                     command1.Parameters.Add(new SqlParameter("DateOfTransaction", transaction.DateOfTransaction.ToString()));
-                    Trace.WriteLine(transaction.DateOfTransaction);
                     command1.Parameters.Add(new SqlParameter("BuyerFullName", transaction.BuyerFullName));
                     command1.Parameters.Add(new SqlParameter("BuyerIdNumber", transaction.BuyerIdNumber));
                     command1.Parameters.Add(new SqlParameter("SalePrice", transaction.SalePrice));
@@ -65,7 +64,6 @@ namespace Core.Repositories.DBRepositories
                 } 
                 catch (Exception e)
                 {
-                    Trace.WriteLine(e.Message);
                     newTransaction.Rollback();
                     connection.Close();
                 }

@@ -25,9 +25,11 @@ namespace AutoSalonProject2024.Views.SellerViews.CarManageViews
     {
         private Car _carForSale;
         private SaleViewModel _saleViewModel;
-        public SaleWindow(Car car)
+        private HomepageWindow _parent;
+        public SaleWindow(Car car, HomepageWindow homepageWindow)
         {
             InitializeComponent();
+            _parent = homepageWindow;
             _carForSale = car;
             _saleViewModel = new SaleViewModel();
             _saleViewModel.Car = car;
@@ -39,6 +41,8 @@ namespace AutoSalonProject2024.Views.SellerViews.CarManageViews
 
         private void OnSaleSuccess(object? sender, EventArgs e)
         {
+            _parent.refreshCars();
+            _parent.refreshSeller();
             this.Close();
         }
 
@@ -64,7 +68,7 @@ namespace AutoSalonProject2024.Views.SellerViews.CarManageViews
             decimal purchasePrice = _carForSale.PurchasePrice;
             if (SalePrice.Text != null && int.TryParse(SalePrice.Text, null, out int result))
             {
-                if (result >= 500)
+                if (result >= 1)
                 {
                     SalePriceValidationLabel.Visibility = Visibility.Hidden;
                 }

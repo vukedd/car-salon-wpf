@@ -61,7 +61,7 @@ namespace AutoSalonProject2024.Views.LoginViews {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/AutoSalonProject2024;component/views/loginviews/loginwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/AutoSalonProject2024;V1.0.0.0;component/views/loginviews/loginwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\LoginViews\LoginWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

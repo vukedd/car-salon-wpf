@@ -117,7 +117,6 @@ namespace Core.Repositories.DBRepositories
 
                     car.Model = models.Where(m => m.Id == car.ModelId).FirstOrDefault();
                     car.Brand = car.Model.Brand;
-                    Trace.WriteLine(models.Count);
                     // Add the car object to the ObservableCollection
                     cars.Add(car);
                 }

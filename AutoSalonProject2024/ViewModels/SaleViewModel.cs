@@ -2,8 +2,10 @@
 using AutoSalonProject2024.Models;
 using Core.IServices;
 using Core.Services;
+using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Security.RightsManagement;
@@ -13,7 +15,7 @@ using System.Windows.Input;
 
 namespace AutoSalonProject2024.ViewModels
 {
-    public class SaleViewModel
+    public class SaleViewModel : INotifyPropertyChanged
     {
         #region Binding Props
         public int Id { get; set; }
@@ -23,16 +25,15 @@ namespace AutoSalonProject2024.ViewModels
         public string? BuyerIdNumber { get; set; }
         public string? SalePrice { get; set; }
         public DateOnly SaleDate { get; set; } = DateOnly.FromDateTime(DateTime.Now);
+        public ICommand CreateSale { get; set; }
 
         #endregion
 
         #region ViewModelProps
         public event EventHandler onSuccess;
         public event EventHandler onFailure;
-        public ICommand CreateSale { get; set; }
+        public event PropertyChangedEventHandler? PropertyChanged;
         public ITransactionService _transactionService;
-
-
         #endregion
         public SaleViewModel()
         {
@@ -47,7 +48,7 @@ namespace AutoSalonProject2024.ViewModels
 
         private void createSaleMet(object obj)
         {
-            if ((BuyerFullName != null && (BuyerFullName.Trim().Length > 2 && BuyerFullName.Trim().Length < 21)) && (BuyerIdNumber != null && BuyerIdNumber.Trim().Length == 9) && (SalePrice != null && decimal.TryParse(SalePrice, null, out decimal result) && result > 500))
+            if ((BuyerFullName != null && (BuyerFullName.Trim().Length > 2 && BuyerFullName.Trim().Length < 21)) && (BuyerIdNumber != null && BuyerIdNumber.Trim().Length == 9) && (SalePrice != null && decimal.TryParse(SalePrice, null, out decimal result) && result >= 1))
             {
                 Transaction transaction = new Transaction(Seller, Car, BuyerFullName, BuyerIdNumber, decimal.Parse(SalePrice));
                 _transactionService.AddTransaction(transaction);
@@ -61,6 +62,16 @@ namespace AutoSalonProject2024.ViewModels
 
         private void onSaleSuccess()
         {
+            decimal profit = decimal.Parse(SalePrice) * (decimal)0.25;
+
+            if (profit > 150)
+            {
+                Seller.Profit = Seller.Profit + profit;
+            }
+            else
+            {
+                Seller.Profit = Seller.Profit + 150;
+            }
             onSuccess?.Invoke(this, EventArgs.Empty);
         }
 

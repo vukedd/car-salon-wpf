@@ -157,8 +157,8 @@ namespace AutoSalonProject2024.Views.SellerViews.CarManageViews {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/AutoSalonProject2024;component/views/sellerviews/carmanageviews/addcarwindow.xam" +
-                    "l", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/AutoSalonProject2024;V1.0.0.0;component/views/sellerviews/carmanageviews/addcarw" +
+                    "indow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\Views\SellerViews\CarManageViews\AddCarWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

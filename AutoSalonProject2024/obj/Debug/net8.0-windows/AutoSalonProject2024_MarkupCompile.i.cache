@@ -16,5 +16,5 @@ C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\App.xam
 216-1087812222
 MainWindow.xaml;Views\LoginViews\LoginWindow.xaml;Views\RegisterViews\RegisterWindow.xaml;Views\SellerViews\CarManageViews\AddCarWindow.xaml;Views\SellerViews\CarManageViews\EditCarWindow.xaml;Views\SellerViews\CarManageViews\SaleWindow.xaml;Views\SellerViews\HomepageWindow.xaml;
 
-True
+False
 

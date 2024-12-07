@@ -26,9 +26,11 @@ namespace AutoSalonProject2024.Views.SellerViews.CarManageViews
     public partial class AddCarWindow : Window
     {
         private AddCarViewModel addCarViewModel;
-        public AddCarWindow()
+        private HomepageWindow _parent;
+        public AddCarWindow(HomepageWindow homepageWindow)
         {
             InitializeComponent();
+            _parent = homepageWindow;
             addCarViewModel = new AddCarViewModel();
             this.DataContext = addCarViewModel;
 
@@ -42,7 +44,7 @@ namespace AutoSalonProject2024.Views.SellerViews.CarManageViews
 
         private void OnCarAddError(object? sender, EventArgs e)
         {
-            MessageBox.Show("Please check all fields!", "Warning", MessageBoxButton.OK ,MessageBoxImage.Warning);
+            MessageBox.Show("Please check all fields!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
         }
 
         private void BrandComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -61,6 +63,7 @@ namespace AutoSalonProject2024.Views.SellerViews.CarManageViews
 
         private void OnCarAdded(object sender, EventArgs e)
         {
+            _parent.refreshCars();
             this.Close();
         }
 

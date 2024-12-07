@@ -31,13 +31,25 @@ namespace AutoSalonProject2024.Views.SellerViews
         {
             InitializeComponent();
             homePageViewModel = new HomepageWindowViewModel();
+            Balance.Text = ((int)HomepageWindowViewModel.Seller.Profit).ToString();
+            WelcomeMsg.Text = "Hello, " + HomepageWindowViewModel.Seller.Username;
             this.DataContext = homePageViewModel;
         }
 
         private void AddNewButton_Click(object sender, RoutedEventArgs e)
         {
-            AddCarWindow addCarWindow = new AddCarWindow();
+            AddCarWindow addCarWindow = new AddCarWindow(this);
             addCarWindow.ShowDialog();
+        }
+
+        public void refreshCars()
+        {
+            homePageViewModel.UpdateCars();
+        }
+
+        public void refreshSeller()
+        {
+            Balance.Text = ((int)HomepageWindowViewModel.Seller.Profit).ToString();
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
@@ -68,7 +80,7 @@ namespace AutoSalonProject2024.Views.SellerViews
                 {
                     Car car = (Car)CarListView.SelectedItem;
                     homePageViewModel.DeleteCar(car.Id);
-                    HomepageWindowViewModel.Cars.Remove(car);
+                    homePageViewModel.Cars.Remove(car);
                 }
             }
             else
@@ -97,7 +109,7 @@ namespace AutoSalonProject2024.Views.SellerViews
         {
             if (CarListView.SelectedItem != null)
             {
-                SaleWindow saleWindow = new SaleWindow((Car)CarListView.SelectedItem);
+                SaleWindow saleWindow = new SaleWindow((Car)CarListView.SelectedItem, this);
                 saleWindow.ShowDialog();
             }
             else
