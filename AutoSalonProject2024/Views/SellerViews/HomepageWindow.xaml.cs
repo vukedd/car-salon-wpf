@@ -31,7 +31,6 @@ namespace AutoSalonProject2024.Views.SellerViews
         {
             InitializeComponent();
             homePageViewModel = new HomepageWindowViewModel();
-            Balance.Text = ((int)HomepageWindowViewModel.Seller.Profit).ToString();
             WelcomeMsg.Text = "Hello, " + HomepageWindowViewModel.Seller.Username;
             this.DataContext = homePageViewModel;
         }
@@ -45,11 +44,6 @@ namespace AutoSalonProject2024.Views.SellerViews
         public void refreshCars()
         {
             homePageViewModel.UpdateCars();
-        }
-
-        public void refreshSeller()
-        {
-            Balance.Text = ((int)HomepageWindowViewModel.Seller.Profit).ToString();
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
@@ -116,6 +110,12 @@ namespace AutoSalonProject2024.Views.SellerViews
             {
                 MessageBox.Show("Please select vehicle for sale!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
+        }
+
+        private void ShowSalesButton_Click(object sender, RoutedEventArgs e)
+        {
+            TransactionManagementWindow transactionManagementWindow = new TransactionManagementWindow(HomepageWindowViewModel.Seller);
+            transactionManagementWindow.ShowDialog();
         }
     }
 }

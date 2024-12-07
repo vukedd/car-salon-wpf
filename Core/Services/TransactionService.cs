@@ -24,5 +24,9 @@ namespace Core.Services
         {
             _transactionRepository.AddTransaction(transaction);
         }
+        public List<Transaction> GetSellerTransactions(int SellerId)
+        {
+            return _transactionRepository.GetSellerTransactions(SellerId);
+        }
     }
 }

@@ -20,5 +20,10 @@ namespace Core.Repositories.CSVRepositories
             CSVResourceProvider.GetInstance().transactionList.Add(transaction);
             CSVResourceProvider.GetInstance().SaveData();
         }
+
+        public List<Transaction> GetSellerTransactions(int SellerId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

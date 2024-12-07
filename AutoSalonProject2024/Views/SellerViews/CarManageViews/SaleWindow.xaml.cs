@@ -42,7 +42,6 @@ namespace AutoSalonProject2024.Views.SellerViews.CarManageViews
         private void OnSaleSuccess(object? sender, EventArgs e)
         {
             _parent.refreshCars();
-            _parent.refreshSeller();
             this.Close();
         }
 

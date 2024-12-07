@@ -1,0 +1,26 @@
+﻿<Window x:Class="AutoSalonProject2024.Views.SellerViews.TransactionManagementWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoSalonProject2024.Views.SellerViews"
+        mc:Ignorable="d"
+        Title="TransactionManagementWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Label FontSize="20" Margin="330,10,0,0" Name="TotalProfitLBL">Total profit: </Label>
+        <ListView Height="300" Width="700" ItemsSource="{Binding transactions}">
+            <ListView.View>
+                <GridView x:Name="TransactionGridView">
+                    <GridViewColumn DisplayMemberBinding="{Binding Id}" Header="Id"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding DateOfTransaction}" Header="Date of transaction"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding BuyerFullName}" Header="Buyer full name"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding BuyerIdNumber}" Header="Buyer ID number"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Car.Brand.Name}" Header="Car brand"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Car.Model.Name}" Header="Car model"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Car.Year}" Header="Production year"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Profit}" Header="Profit"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

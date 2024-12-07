@@ -17,6 +17,7 @@ namespace AutoSalonProject2024.Models
         private string _buyerIdNumber;
         private decimal? _salePrice;
         private DateOnly _dateOfTransaction;
+        private decimal _profit;
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)
@@ -115,6 +116,19 @@ namespace AutoSalonProject2024.Models
             }
         }
 
+        public decimal Profit 
+        {
+            get
+            {
+                return _profit;
+            }
+            
+            set
+            {
+                _profit = value;
+                OnPropertyChanged(nameof(value));
+            }
+        }
         public Transaction(int Id, Seller seller, Car car, string BuyerFullName, string BuyerIdNumber, decimal SalePrice, DateOnly SaleDate)
         {
             this.Id = Id;
@@ -145,6 +159,10 @@ namespace AutoSalonProject2024.Models
             this.BuyerIdNumber = BuyerIdNumber;
             this.SalePrice = SalePrice;
             this.DateOfTransaction = DateOnly.FromDateTime(DateTime.Now);
+        }
+
+        public Transaction()
+        {
         }
 
         public string toCsv()

@@ -10,5 +10,6 @@ namespace Core.IServices
     public interface ITransactionService
     {
         void AddTransaction(Transaction transaction);
+        List<Transaction> GetSellerTransactions(int SellerId);
     }
 }

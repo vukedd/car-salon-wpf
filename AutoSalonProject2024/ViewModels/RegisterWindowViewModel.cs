@@ -2,6 +2,9 @@
 using AutoSalonProject2024.Managers;
 using AutoSalonProject2024.Models;
 using AutoSalonProject2024.Views.RegisterViews;
+using Core.IServices;
+using Core.Repositories.DBRepositories;
+using Core.Services;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -16,6 +19,7 @@ namespace AutoSalonProject2024.ViewModels
     {
         public event EventHandler UserAlreadyExists;
         public event EventHandler RegisterSuccess;
+        public ISellerService _sellerService;
         public ICommand RegisterNewSeller { get; set; }
         public string? JMBG { get; set; }
         public string? Name { get; set; }
@@ -25,7 +29,7 @@ namespace AutoSalonProject2024.ViewModels
         public RegisterWindowViewModel()
         {
             RegisterNewSeller = new RelayCommand(RegisterNewSellerMet, CanRegisterNewSeller);
-            UserManager.Users.Add(new Seller() { Id = 1, Name="Vukasin", JMBG="2805003800003",Username="vukedd", Password = "vukedd"});
+            _sellerService = new SellerService();
         }
 
         private bool CanRegisterNewSeller(object obj)
@@ -41,16 +45,14 @@ namespace AutoSalonProject2024.ViewModels
             }
             else
             {
-                foreach (Seller s in UserManager.Users)
+                if (_sellerService.RegisterSeller(new Seller() { Id = 0, Name = Name.Trim().ToLower(), JMBG = JMBG.Trim(), Username = Username.Trim().ToLower(), Password = Password.Trim(), Profit = 0 }))
                 {
-                    if (s.Username.ToLower() == Username.ToLower())
-                    {
-                        onUserAlreadyExists();
-                        return;
-                    }
+                    onRegisterSuccess();
+                } 
+                else
+                {
+                    onUserAlreadyExists();
                 }
-                //UserManager.Users.Add(new Seller() { Id = 1, Name = Name.Trim().ToLower(), JMBG = JMBG.Trim(), Username = Username.Trim().ToLower(), Password = Password.Trim(), Profit = 0 });
-                onRegisterSuccess();
             }
         }
 

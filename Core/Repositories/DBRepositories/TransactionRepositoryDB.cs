@@ -1,6 +1,8 @@
 ﻿using AutoSalonProject2024.Models;
 using Core.Data;
 using Core.IRepositories;
+using Core.IServices;
+using Core.Services;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -14,6 +16,13 @@ namespace Core.Repositories.DBRepositories
 {
     public class TransactionRepositoryDB : ITransactionRepository
     {
+        private ICarRepository _carRepository;
+        private ISellerRepository _sellerRepository;
+        public TransactionRepositoryDB()
+        {
+            _carRepository = new CarRepositoryDB();
+            _sellerRepository = new SellerRepositoryDB();
+        }
         public void AddTransaction(Transaction transaction)
         {
             using (var connection = new SqlConnection(Config.CONNECTION_STRING))
@@ -68,6 +77,39 @@ namespace Core.Repositories.DBRepositories
                     connection.Close();
                 }
             }
+        }
+
+        public List<Transaction> GetSellerTransactions(int SellerId)
+        {
+            List<Transaction> transactions = new List<Transaction>();
+            using (var connection = new SqlConnection(Config.CONNECTION_STRING))
+            {
+                string commandText = @"SELECT * FROM Transactions WHERE SellerId = @SellerId;";
+                connection.Open();
+                SqlCommand command = new SqlCommand(commandText, connection);
+                command.Parameters.Add(new SqlParameter("SellerId", SellerId));
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Transaction transaction = new Transaction()
+                    {
+                        Id = reader.GetInt32(0),
+                        DateOfTransaction = DateOnly.FromDateTime(reader.GetDateTime(1)),
+                        BuyerFullName = reader.GetString(2),
+                        BuyerIdNumber = reader.GetString(3),
+                        SalePrice = reader.GetDecimal(4),
+                        Car = _carRepository.GetCarById(reader.GetInt32(5)),
+                        Seller = _sellerRepository.GetSellerById(reader.GetInt32(6)),
+                        Profit = reader.GetDecimal(4) - _carRepository.GetCarById(reader.GetInt32(5)).PurchasePrice
+                    };
+
+                    transactions.Add(transaction);
+                }
+            }
+
+            return transactions;
         }
     }
 }

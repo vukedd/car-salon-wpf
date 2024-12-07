@@ -133,9 +133,10 @@ namespace Core.Repositories.DBRepositories
             ObservableCollection<CarModel> models = _carModelRepository.GetAllModels();
             using (var connection = new SqlConnection(Config.CONNECTION_STRING))
             {
-                string commandText = @"SELECT * FROM Car, CarModel, CarBrand WHERE Car.CarModelId = CarModel.CarModelId AND CarModel.CarBrandId = CarBrand.CarBrandId WHERE CarId = @Id;";
+                string commandText = @"SELECT * FROM Car, CarModel, CarBrand WHERE Car.CarModelId = CarModel.CarModelId AND CarModel.CarBrandId = CarBrand.CarBrandId AND CarId = @Id;";
                 connection.Open();
                 SqlCommand command = new SqlCommand();
+                command.Connection = connection;
                 command.CommandText = commandText;
                 command.Parameters.Add(new SqlParameter("Id", Id));
 

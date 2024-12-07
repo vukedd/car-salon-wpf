@@ -10,5 +10,6 @@ namespace Core.IRepositories
     public interface ITransactionRepository
     {
         void AddTransaction(Transaction transaction);
+        List<Transaction> GetSellerTransactions(int SellerId);
     }
 }
