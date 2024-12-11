@@ -16,6 +16,15 @@
     <Compile Update="Views\RegisterViews\RegisterWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\SellerViews\BrandManageViews\AddBrandWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\SellerViews\BrandManageViews\BrandManagementWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\SellerViews\BrandManageViews\EditBrandWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\SellerViews\CarManageViews\AddCarWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -40,6 +49,15 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\RegisterViews\RegisterWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SellerViews\BrandManageViews\AddBrandWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SellerViews\BrandManageViews\BrandManagementWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SellerViews\BrandManageViews\EditBrandWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\SellerViews\CarManageViews\AddCarWindow.xaml">

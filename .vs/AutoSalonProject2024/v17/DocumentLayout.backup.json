@@ -3,28 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{35E409AD-365E-4E84-A237-6853BCF67F01}|Core\\Core.csproj|c:\\users\\thinkpad\\source\\repos\\autosalonproject2024\\core\\repositories\\dbrepositories\\sellerrepositorydb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{35E409AD-365E-4E84-A237-6853BCF67F01}|Core\\Core.csproj|solutionrelative:core\\repositories\\dbrepositories\\sellerrepositorydb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{37085A5A-B4D7-4FAF-B180-E9AFDED2E61A}|AutoSalonProject2024\\AutoSalonProject2024.csproj|c:\\users\\thinkpad\\source\\repos\\autosalonproject2024\\autosalonproject2024\\views\\sellerviews\\brandmanageviews\\addbrandwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37085A5A-B4D7-4FAF-B180-E9AFDED2E61A}|AutoSalonProject2024\\AutoSalonProject2024.csproj|solutionrelative:autosalonproject2024\\views\\sellerviews\\brandmanageviews\\addbrandwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35E409AD-365E-4E84-A237-6853BCF67F01}|Core\\Core.csproj|c:\\users\\thinkpad\\source\\repos\\autosalonproject2024\\core\\irepositories\\isellerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{35E409AD-365E-4E84-A237-6853BCF67F01}|Core\\Core.csproj|solutionrelative:core\\irepositories\\isellerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{37085A5A-B4D7-4FAF-B180-E9AFDED2E61A}|AutoSalonProject2024\\AutoSalonProject2024.csproj|c:\\users\\thinkpad\\source\\repos\\autosalonproject2024\\autosalonproject2024\\viewmodels\\addcarbrandviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37085A5A-B4D7-4FAF-B180-E9AFDED2E61A}|AutoSalonProject2024\\AutoSalonProject2024.csproj|solutionrelative:autosalonproject2024\\viewmodels\\addcarbrandviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35E409AD-365E-4E84-A237-6853BCF67F01}|Core\\Core.csproj|c:\\users\\thinkpad\\source\\repos\\autosalonproject2024\\core\\services\\sellerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{35E409AD-365E-4E84-A237-6853BCF67F01}|Core\\Core.csproj|solutionrelative:core\\services\\sellerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{37085A5A-B4D7-4FAF-B180-E9AFDED2E61A}|AutoSalonProject2024\\AutoSalonProject2024.csproj|c:\\users\\thinkpad\\source\\repos\\autosalonproject2024\\autosalonproject2024\\viewmodels\\registerwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{37085A5A-B4D7-4FAF-B180-E9AFDED2E61A}|AutoSalonProject2024\\AutoSalonProject2024.csproj|solutionrelative:autosalonproject2024\\viewmodels\\registerwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{35E409AD-365E-4E84-A237-6853BCF67F01}|Core\\Core.csproj|c:\\users\\thinkpad\\source\\repos\\autosalonproject2024\\core\\iservices\\isellerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{35E409AD-365E-4E84-A237-6853BCF67F01}|Core\\Core.csproj|solutionrelative:core\\iservices\\isellerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{37085A5A-B4D7-4FAF-B180-E9AFDED2E61A}|AutoSalonProject2024\\AutoSalonProject2024.csproj|c:\\users\\thinkpad\\source\\repos\\autosalonproject2024\\autosalonproject2024\\views\\sellerviews\\carmanageviews\\salewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{37085A5A-B4D7-4FAF-B180-E9AFDED2E61A}|AutoSalonProject2024\\AutoSalonProject2024.csproj|solutionrelative:autosalonproject2024\\views\\sellerviews\\carmanageviews\\salewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{37085A5A-B4D7-4FAF-B180-E9AFDED2E61A}|AutoSalonProject2024\\AutoSalonProject2024.csproj|c:\\users\\thinkpad\\source\\repos\\autosalonproject2024\\autosalonproject2024\\views\\sellerviews\\brandmanageviews\\addbrandwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{37085A5A-B4D7-4FAF-B180-E9AFDED2E61A}|AutoSalonProject2024\\AutoSalonProject2024.csproj|solutionrelative:autosalonproject2024\\views\\sellerviews\\brandmanageviews\\addbrandwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,89 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 189,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ISellerRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\Core\\IRepositories\\ISellerRepository.cs",
-              "RelativeDocumentMoniker": "Core\\IRepositories\\ISellerRepository.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\Core\\IRepositories\\ISellerRepository.cs",
-              "RelativeToolTip": "Core\\IRepositories\\ISellerRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA4AAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T17:33:02.664Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RegisterWindowViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonProject2024\\ViewModels\\RegisterWindowViewModel.cs",
-              "RelativeDocumentMoniker": "AutoSalonProject2024\\ViewModels\\RegisterWindowViewModel.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonProject2024\\ViewModels\\RegisterWindowViewModel.cs",
-              "RelativeToolTip": "AutoSalonProject2024\\ViewModels\\RegisterWindowViewModel.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAmwCwAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T17:31:02.721Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SaleWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonProject2024\\Views\\SellerViews\\CarManageViews\\SaleWindow.xaml.cs",
-              "RelativeDocumentMoniker": "AutoSalonProject2024\\Views\\SellerViews\\CarManageViews\\SaleWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonProject2024\\Views\\SellerViews\\CarManageViews\\SaleWindow.xaml.cs",
-              "RelativeToolTip": "AutoSalonProject2024\\Views\\SellerViews\\CarManageViews\\SaleWindow.xaml.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAnwCwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T17:30:00.523Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ISellerService.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\Core\\IServices\\ISellerService.cs",
-              "RelativeDocumentMoniker": "Core\\IServices\\ISellerService.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\Core\\IServices\\ISellerService.cs",
-              "RelativeToolTip": "Core\\IServices\\ISellerService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T17:28:03.803Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "SellerRepositoryDB.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\Core\\Repositories\\DBRepositories\\SellerRepositoryDB.cs",
-              "RelativeDocumentMoniker": "Core\\Repositories\\DBRepositories\\SellerRepositoryDB.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\Core\\Repositories\\DBRepositories\\SellerRepositoryDB.cs",
-              "RelativeToolTip": "Core\\Repositories\\DBRepositories\\SellerRepositoryDB.cs",
-              "ViewState": "AgIAAGsAAAAAAAAAAAAkwHYAAAAAAAAAAAAAAA==",
+              "Title": "AddBrandWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonProject2024\\Views\\SellerViews\\BrandManageViews\\AddBrandWindow.xaml.cs",
+              "RelativeDocumentMoniker": "AutoSalonProject2024\\Views\\SellerViews\\BrandManageViews\\AddBrandWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonProject2024\\Views\\SellerViews\\BrandManageViews\\AddBrandWindow.xaml.cs",
+              "RelativeToolTip": "AutoSalonProject2024\\Views\\SellerViews\\BrandManageViews\\AddBrandWindow.xaml.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAgwD4AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T17:14:58.335Z",
+              "WhenOpened": "2024-12-11T18:59:43.378Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "SellerService.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\Core\\Services\\SellerService.cs",
-              "RelativeDocumentMoniker": "Core\\Services\\SellerService.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\Core\\Services\\SellerService.cs",
-              "RelativeToolTip": "Core\\Services\\SellerService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T15:15:26.795Z",
+              "Title": "AddBrandWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonProject2024\\Views\\SellerViews\\BrandManageViews\\AddBrandWindow.xaml",
+              "RelativeDocumentMoniker": "AutoSalonProject2024\\Views\\SellerViews\\BrandManageViews\\AddBrandWindow.xaml",
+              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonProject2024\\Views\\SellerViews\\BrandManageViews\\AddBrandWindow.xaml",
+              "RelativeToolTip": "AutoSalonProject2024\\Views\\SellerViews\\BrandManageViews\\AddBrandWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-11T18:57:36.586Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AddCarBrandViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonProject2024\\ViewModels\\AddCarBrandViewModel.cs",
+              "RelativeDocumentMoniker": "AutoSalonProject2024\\ViewModels\\AddCarBrandViewModel.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonProject2024\\ViewModels\\AddCarBrandViewModel.cs",
+              "RelativeToolTip": "AutoSalonProject2024\\ViewModels\\AddCarBrandViewModel.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAnwCYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T18:29:52.638Z",
+              "EditorCaption": ""
             }
           ]
         }

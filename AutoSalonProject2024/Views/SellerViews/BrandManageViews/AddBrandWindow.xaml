@@ -1,0 +1,20 @@
+﻿<Window x:Class="AutoSalonProject2024.Views.SellerViews.BrandManageViews.AddBrandWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoSalonProject2024.Views.SellerViews.BrandManageViews"
+        mc:Ignorable="d"
+        Title="AddBrandWindow" Height="450" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <StackPanel>
+        <TextBlock FontSize="20" Margin="60,20,0,0">Add new car brand</TextBlock>
+        <Label Margin="90,0,0,0">Select Country:</Label>
+        <ComboBox Width="120" ItemsSource="{Binding Countries}" DisplayMemberPath="Name" SelectedItem="{Binding Country}" Name="CountryComboBox" SelectionChanged="CountryComboBox_SelectionChanged"/>
+        <Label Visibility="Collapsed" Height="30" Margin="70,0,0,0" Name="comboBoxValidation" Foreground="Red">Country must be selected</Label>
+        <Label Margin="87,30,0,0" Name="brandNameLBL">Enter brand name:</Label>
+        <TextBox Width="120" Height="21" Text="{Binding BrandName}" TextChanged="BrandNameTextBox_TextChanged" Name="BrandName"></TextBox>
+        <Label Visibility="Collapsed" Name="lengthValidation" Margin="20,0,0,0" Foreground="red" Height="30">Brand name must be at least three charaters</Label>
+        <Label Visibility="Collapsed" Name="existValidation" Margin="65,0,0,0" Foreground="red" Height="30">Brand name already exists</Label>
+        <Button Margin="0,50,0,0" Width="100" Padding="5" Command="{Binding CreateBrand}" Name="SubmitBTN">Submit</Button>
+    </StackPanel>
+</Window>

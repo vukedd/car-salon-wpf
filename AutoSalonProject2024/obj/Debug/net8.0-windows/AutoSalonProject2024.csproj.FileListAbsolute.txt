@@ -81,3 +81,9 @@ C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\bin\Deb
 C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Runtime.Caching.dll
 C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\obj\Debug\net8.0-windows\Views\SellerViews\TransactionManagementWindow.g.cs
 C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\obj\Debug\net8.0-windows\Views\SellerViews\TransactionManagementWindow.baml
+C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\obj\Debug\net8.0-windows\Views\SellerViews\BrandManageViews\BrandManagementWindow.g.cs
+C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\obj\Debug\net8.0-windows\Views\SellerViews\BrandManageViews\BrandManagementWindow.baml
+C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\obj\Debug\net8.0-windows\Views\SellerViews\BrandManageViews\AddBrandWindow.g.cs
+C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\obj\Debug\net8.0-windows\Views\SellerViews\BrandManageViews\AddBrandWindow.baml
+C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\obj\Debug\net8.0-windows\Views\SellerViews\BrandManageViews\EditBrandWindow.g.cs
+C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\obj\Debug\net8.0-windows\Views\SellerViews\BrandManageViews\EditBrandWindow.baml

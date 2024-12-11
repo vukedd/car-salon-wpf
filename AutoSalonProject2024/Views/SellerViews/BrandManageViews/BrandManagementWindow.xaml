@@ -1,0 +1,25 @@
+﻿<Window x:Class="AutoSalonProject2024.Views.SellerViews.BrandManageViews.BrandManagementWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoSalonProject2024.Views.SellerViews.BrandManageViews"
+        mc:Ignorable="d"
+        Title="BrandManagementWindow" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <ToolBarTray Height="40" Margin="-2,0,0,372" IsLocked="True">
+            <ToolBar Background="LightGray" Width="800" Height="40">
+                <Button Click="AddBrandButton_Click" Height="40" Padding="10,0,10,0">Add Brand</Button>
+                <Button Click="DeleteBrandButton_Click" Height="40" Padding="10,0,10,0">Delete Brand</Button>
+            </ToolBar>
+        </ToolBarTray>
+        <ListView Width="700" Height="300" ItemsSource="{Binding CarBrands}" Name="BrandListView">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Brand name" Width="340"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Country.Name}" Header="Country of origin" Width="340"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

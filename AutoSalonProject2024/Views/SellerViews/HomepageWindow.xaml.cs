@@ -1,5 +1,6 @@
 ﻿using AutoSalonProject2024.Models;
 using AutoSalonProject2024.ViewModels;
+using AutoSalonProject2024.Views.SellerViews.BrandManageViews;
 using AutoSalonProject2024.Views.SellerViews.CarManageViews;
 using Core.Data;
 using System;
@@ -56,7 +57,7 @@ namespace AutoSalonProject2024.Views.SellerViews
             }
             else
             {
-                MessageBox.Show("Please select vehicle!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Please select vehicle!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }            
         }
 
@@ -108,7 +109,7 @@ namespace AutoSalonProject2024.Views.SellerViews
             }
             else
             {
-                MessageBox.Show("Please select vehicle for sale!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Please select vehicle for sale!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -116,6 +117,12 @@ namespace AutoSalonProject2024.Views.SellerViews
         {
             TransactionManagementWindow transactionManagementWindow = new TransactionManagementWindow(HomepageWindowViewModel.Seller);
             transactionManagementWindow.ShowDialog();
+        }
+
+        private void ShowBrandsButton_Click(object sender, RoutedEventArgs e)
+        {
+            BrandManagementWindow brandManagementWindow = new BrandManagementWindow();
+            brandManagementWindow.ShowDialog();
         }
     }
 }

@@ -1,0 +1,17 @@
+﻿<Window x:Class="AutoSalonProject2024.Views.SellerViews.BrandManageViews.EditBrandWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoSalonProject2024.Views.SellerViews.BrandManageViews"
+        mc:Ignorable="d"
+        Title="EditBrandWindow" Height="450" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <StackPanel>
+        <TextBlock FontSize="20" Margin="100,20,0,0">Edit brand</TextBlock>
+        <Label Margin="90,0,0,0">Select Country:</Label>
+        <ComboBox Width="120"/>
+        <Label Margin="87,20,0,0">Enter brand name:</Label>
+        <TextBox Width="120" Height="21"></TextBox>
+        <Button Margin="0,50,0,0" Width="100" Padding="5">Submit</Button>
+    </StackPanel>
+</Window>

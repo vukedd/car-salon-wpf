@@ -23,10 +23,9 @@
                 <Separator/>
                 <Button Width="100" Height="40" Margin="0,0,0,0" Content="Show sales" Click="ShowSalesButton_Click"></Button>
                 <Separator/>
-                <Button Width="100" Height="40" Margin="0, 0, 0, 0" Content="Countries"/>
-                <Button Width="100" Height="40" Margin="0, 0, 0, 0" Content="Brands"/>
+                <Button Width="100" Height="40" Margin="0, 0, 0, 0" Content="Brands" Click="ShowBrandsButton_Click"/>
                 <Button Width="100" Height="40" Margin="0, 0, 0, 0" Content="Models"/>
-                <Label Margin="60,5,0,0" FontSize="12">Search: </Label><TextBox Margin="0,0,0,0" Width="150" Height="30" ></TextBox>
+                <Label Margin="140,5,0,0" FontSize="12">Search: </Label><TextBox Margin="0,0,0,0" Width="150" Height="30" ></TextBox>
             </ToolBar>
         </ToolBarTray>
         <TextBlock FontSize="30" Margin="440, 70,100,100" Name="WelcomeMsg" Text="{Binding Seller.Username}"></TextBlock>
@@ -34,15 +33,13 @@
         <ListView Height="400" Width="800" Margin="0, 100, 0, 70" ItemsSource="{Binding Cars}" Name="CarListView">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Id}" Header="Id" Width="25"></GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Brand.Name}" Header="Brand" Width="70"></GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Model.Name}" Header="Model" Width="70"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Brand.Name}" Header="Brand" Width="100"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Model.Name}" Header="Model" Width="100"></GridViewColumn>
                     <GridViewColumn DisplayMemberBinding="{Binding Year}" Header="Production year" Width="120"></GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding FuelType}" Header="Fuel type" Width="100"></GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding HorsePower}" Header="Horse power" Width="80"></GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding PurchasePrice}" Header="Purchase price" Width="90"></GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding PurchaseDate}" Header="Purchase date" Width="100"></GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Sold}" Header="Sold" Width="40"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding FuelType}" Header="Fuel type" Width="120"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding HorsePower}" Header="Horse power" Width="100"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding PurchasePrice}" Header="Purchase price" Width="120"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding PurchaseDate}" Header="Purchase date" Width="120"></GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>

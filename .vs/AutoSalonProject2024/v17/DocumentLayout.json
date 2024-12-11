@@ -1,12 +1,70 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{37085A5A-B4D7-4FAF-B180-E9AFDED2E61A}|AutoSalonProject2024\\AutoSalonProject2024.csproj|c:\\users\\thinkpad\\source\\repos\\autosalonproject2024\\autosalonproject2024\\views\\sellerviews\\brandmanageviews\\addbrandwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37085A5A-B4D7-4FAF-B180-E9AFDED2E61A}|AutoSalonProject2024\\AutoSalonProject2024.csproj|solutionrelative:autosalonproject2024\\views\\sellerviews\\brandmanageviews\\addbrandwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37085A5A-B4D7-4FAF-B180-E9AFDED2E61A}|AutoSalonProject2024\\AutoSalonProject2024.csproj|c:\\users\\thinkpad\\source\\repos\\autosalonproject2024\\autosalonproject2024\\viewmodels\\addcarbrandviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37085A5A-B4D7-4FAF-B180-E9AFDED2E61A}|AutoSalonProject2024\\AutoSalonProject2024.csproj|solutionrelative:autosalonproject2024\\viewmodels\\addcarbrandviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37085A5A-B4D7-4FAF-B180-E9AFDED2E61A}|AutoSalonProject2024\\AutoSalonProject2024.csproj|c:\\users\\thinkpad\\source\\repos\\autosalonproject2024\\autosalonproject2024\\views\\sellerviews\\brandmanageviews\\addbrandwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{37085A5A-B4D7-4FAF-B180-E9AFDED2E61A}|AutoSalonProject2024\\AutoSalonProject2024.csproj|solutionrelative:autosalonproject2024\\views\\sellerviews\\brandmanageviews\\addbrandwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 189,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AddBrandWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonProject2024\\Views\\SellerViews\\BrandManageViews\\AddBrandWindow.xaml.cs",
+              "RelativeDocumentMoniker": "AutoSalonProject2024\\Views\\SellerViews\\BrandManageViews\\AddBrandWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonProject2024\\Views\\SellerViews\\BrandManageViews\\AddBrandWindow.xaml.cs",
+              "RelativeToolTip": "AutoSalonProject2024\\Views\\SellerViews\\BrandManageViews\\AddBrandWindow.xaml.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAgwEAAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T18:59:43.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AddBrandWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonProject2024\\Views\\SellerViews\\BrandManageViews\\AddBrandWindow.xaml",
+              "RelativeDocumentMoniker": "AutoSalonProject2024\\Views\\SellerViews\\BrandManageViews\\AddBrandWindow.xaml",
+              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonProject2024\\Views\\SellerViews\\BrandManageViews\\AddBrandWindow.xaml",
+              "RelativeToolTip": "AutoSalonProject2024\\Views\\SellerViews\\BrandManageViews\\AddBrandWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-11T18:57:36.586Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AddCarBrandViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonProject2024\\ViewModels\\AddCarBrandViewModel.cs",
+              "RelativeDocumentMoniker": "AutoSalonProject2024\\ViewModels\\AddCarBrandViewModel.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonProject2024\\ViewModels\\AddCarBrandViewModel.cs",
+              "RelativeToolTip": "AutoSalonProject2024\\ViewModels\\AddCarBrandViewModel.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAnwCYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T18:29:52.638Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

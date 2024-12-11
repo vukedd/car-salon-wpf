@@ -19,9 +19,30 @@ namespace Core.Repositories.CSVRepositories
         {
             _dataProvider = CSVResourceProvider.GetInstance();
         }
+
+        public void AddCarBrand(CarBrand carBrand)
+        {
+            throw new NotImplementedException();
+        }
+
         public ObservableCollection<CarBrand> GetAllBrands()
         {
             return _dataProvider.brandsList;
+        }
+
+        public CarBrand GetCarBrandById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool DeleteCarBrand(CarBrand carBrand)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool BrandExistance(string carBrandName)
+        {
+            throw new NotImplementedException();
         }
     }
 }

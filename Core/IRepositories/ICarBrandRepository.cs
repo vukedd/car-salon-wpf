@@ -11,5 +11,9 @@ namespace Core.IRepositories
     public interface ICarBrandRepository
     {
         public ObservableCollection<CarBrand> GetAllBrands();
+        public void AddCarBrand(CarBrand carBrand);
+        public bool DeleteCarBrand(CarBrand carBrand);
+        public CarBrand GetCarBrandById(int id);
+        public bool BrandExistance(string carBrandName);
     }
 }

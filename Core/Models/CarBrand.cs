@@ -22,6 +22,12 @@ namespace AutoSalonProject2024.Models
             this.CountryId = country.Id;
         }
 
+        public CarBrand(string Name, Country country)
+        {
+            this.Name = Name;
+            this.Country = country;
+        }
+
         public CarBrand()
         {
         }
