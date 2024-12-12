@@ -7,8 +7,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -123,6 +125,64 @@ namespace AutoSalonProject2024.Views.SellerViews
         {
             BrandManagementWindow brandManagementWindow = new BrandManagementWindow();
             brandManagementWindow.ShowDialog();
+        }
+
+        private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            homePageViewModel.FilterCars(SearchBar.Text.Trim());
+        }
+
+        private void PriceRangeSubmit(object sender, RoutedEventArgs e)
+        {
+            bool validFrom = false;
+            bool validTo = false;
+            bool validSearchBar = false;
+
+            int from = 0;
+            if (PriceRangeFromTxtBox.Text.Trim() != "")
+            {
+                from = int.Parse(PriceRangeFromTxtBox.Text);
+                validFrom = true;
+            } 
+            
+
+            int to = 0;
+
+            if (PriceRangeToTxtBox.Text.Trim() != "") 
+            {
+                to = int.Parse(PriceRangeToTxtBox.Text);
+                validTo = true;
+            }
+
+            string filter = "";
+            if (SearchBar.Text.Trim() != "")
+            {
+                filter = SearchBar.Text.Trim();
+                validSearchBar = true;
+            }
+            
+            if ((validFrom || validTo))
+            {
+                homePageViewModel.FilterCarsPrice(from, to, filter);
+            }
+            else
+            {
+                MessageBox.Show("Please fill in at least one field!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            //homePageViewModel.FilterCarsPrice(from, to, filter);
+        }
+
+        private void PriceRangeToTxtBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void PriceRangeFromTxtBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");            
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }

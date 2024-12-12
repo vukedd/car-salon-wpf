@@ -58,5 +58,15 @@ namespace Core.Repositories.CSVRepositories
             _dataProvider.carsList.Add(Car);
             _dataProvider.SaveData();
         }
+
+        public ObservableCollection<Car> FilterCars(string filter)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ObservableCollection<Car> FilterCarsPrice(int from, int to, string filter)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

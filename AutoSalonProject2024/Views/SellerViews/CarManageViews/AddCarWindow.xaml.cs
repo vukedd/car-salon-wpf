@@ -57,7 +57,8 @@ namespace AutoSalonProject2024.Views.SellerViews.CarManageViews
                     models.Add(model);
             }
             modelsCombo.IsEnabled = true;
-            modelsCombo.SelectedItem = models[0];
+            if (models.Count() > 0)
+                modelsCombo.SelectedItem = models[0];
             modelsCombo.ItemsSource = models;
         }
 

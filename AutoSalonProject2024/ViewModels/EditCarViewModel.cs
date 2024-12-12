@@ -60,7 +60,7 @@ namespace AutoSalonProject2024.ViewModels
 
         private void editCarMet(object obj)
         {
-            if (ProductionYear != "" && HorsePower != "" && PurchasePrice != "")
+            if (ProductionYear != "" && HorsePower != "" && PurchasePrice != "" && CarModel != null)
             {
                 if (validateCarDetails(int.Parse(ProductionYear), int.Parse(HorsePower), decimal.Parse(PurchasePrice), CarModel, CarBrand))
                 {

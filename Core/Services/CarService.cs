@@ -35,6 +35,16 @@ namespace Core.Services
             _carRepository.EditCar(Id, Car);
         }
 
+        public ObservableCollection<Car> FilterCars(string filter)
+        {
+            return _carRepository.FilterCars(filter);
+        }
+
+        public ObservableCollection<Car> FilterCarsPrice(int from, int to, string filter)
+        {
+            return _carRepository.FilterCarsPrice(from, to, filter);
+        }
+
         public ObservableCollection<Car> GetAllCars()
         {
             return _carRepository.GetAllCars();   

@@ -50,16 +50,17 @@ namespace AutoSalonProject2024.Views.SellerViews.CarManageViews
         private void brandCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             CarBrand brand = (CarBrand)brandCombo.SelectedItem;
-            carModels = new ObservableCollection<CarModel>();
-            foreach (CarModel model in editCarViewModel.Models)
-            {
-                if (model.Brand == brand)
-                {
-                    carModels.Add(model);
-                }
-            }
+            carModels = new ObservableCollection<CarModel>(
+                editCarViewModel.Models.Where(model => model.Brand.Id == editCarViewModel.CarBrand.Id).ToList()
+            );
+
             modelsCombo.ItemsSource = carModels;
-            modelsCombo.SelectedItem = carModels[0];
+
+            if (carModels.Count != 0)
+            {
+                modelsCombo.SelectedItem = carModels[0];
+
+            }
         }
         private void onCarEdit(object sender, EventArgs e)
         {

@@ -15,5 +15,7 @@ namespace Core.IRepositories
         void DeleteCar(int Id);
         void EditCar(int Id, Car car);
         void AddCar(Car car);
+        ObservableCollection<Car> FilterCars(string filter);
+        ObservableCollection<Car> FilterCarsPrice(int from, int to, string filter);
     }
 }

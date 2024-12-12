@@ -78,6 +78,132 @@ namespace Core.Repositories.DBRepositories
             }  
         }
 
+        public ObservableCollection<Car> FilterCars(string filter)
+        {
+            ObservableCollection<Car> cars = new ObservableCollection<Car>();
+            ObservableCollection<CarModel> models = _carModelRepository.GetAllModels();
+            using (var connection = new SqlConnection(Config.CONNECTION_STRING))
+            {
+                string commandText = @"SELECT * FROM Car A LEFT JOIN CarModel B ON A.CarModelId = B.CarModelId LEFT JOIN CarBrand C ON C.CarBrandId = B.CarBrandId LEFT JOIN Country D ON C.CountryId = D.CountryId WHERE (B.Name LIKE @filter OR C.Name LIKE @filter OR D.Name LIKE @filter) AND A.Sold = 0;";
+                connection.Open();
+
+                SqlCommand command = new SqlCommand();
+                command.Connection = connection;
+                command.CommandText = commandText;
+                command.Parameters.Add(new SqlParameter("filter", filter + '%'));
+
+
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    int sold = reader.GetInt32(3);
+                    bool soldBool = false;
+                    if (sold == 1)
+                    {
+                        soldBool = true;
+                    }
+                    else
+                    {
+                        soldBool = false;
+                    }
+
+                    Car car = new Car
+                    {
+                        Id = reader.GetInt32(0),
+                        Year = reader.GetInt16(1),
+                        HorsePower = reader.GetInt16(2),
+                        Sold = soldBool,
+                        PurchasePrice = reader.GetDecimal(4),
+                        PurchaseDate = DateOnly.FromDateTime(reader.GetDateTime(5)),
+                        FuelType = (FuelType)(reader.GetByte(6)),
+                        ModelId = reader.GetInt32(7)
+                    };
+
+                    car.Model = models.Where(m => m.Id == car.ModelId).FirstOrDefault();
+                    car.Brand = car.Model.Brand;
+
+                    cars.Add(car);
+                }
+                connection.Close();
+            }
+
+            return cars;
+        }
+
+        public ObservableCollection<Car> FilterCarsPrice(int from, int to, string filter)
+        {
+            ObservableCollection<Car> cars = new ObservableCollection<Car>();
+            ObservableCollection<CarModel> models = _carModelRepository.GetAllModels();
+            string commandText = @"SELECT * FROM Car A LEFT JOIN CarModel B ON A.CarModelId = B.CarModelId LEFT JOIN CarBrand C ON C.CarBrandId = B.CarBrandId LEFT JOIN Country D ON C.CountryId = D.CountryId WHERE (B.Name LIKE @filter OR C.Name LIKE @filter OR D.Name LIKE @filter) AND A.Sold = 0";
+
+            if (from != 0)
+            {
+                commandText += " AND A.PurchasePrice >= @from";
+            }
+
+            if (to != 0)
+            {
+                commandText += " AND A.PurchasePrice <= @to";
+            }
+
+            Trace.WriteLine(commandText);
+            using (var connection = new SqlConnection(Config.CONNECTION_STRING))
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand();
+                command.Connection = connection;
+                command.CommandText = commandText;
+                command.Parameters.Add(new SqlParameter("filter", filter + '%'));
+
+                if (from != 0)
+                {
+                    command.Parameters.Add(new SqlParameter("from", from));
+                }
+
+                if (to != 0)
+                {
+                    command.Parameters.Add(new SqlParameter("to", to));
+                }
+
+
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    int sold = reader.GetInt32(3);
+                    bool soldBool = false;
+                    if (sold == 1)
+                    {
+                        soldBool = true;
+                    }
+                    else
+                    {
+                        soldBool = false;
+                    }
+
+                    Car car = new Car
+                    {
+                        Id = reader.GetInt32(0),
+                        Year = reader.GetInt16(1),
+                        HorsePower = reader.GetInt16(2),
+                        Sold = soldBool,
+                        PurchasePrice = reader.GetDecimal(4),
+                        PurchaseDate = DateOnly.FromDateTime(reader.GetDateTime(5)),
+                        FuelType = (FuelType)(reader.GetByte(6)),
+                        ModelId = reader.GetInt32(7)
+                    };
+
+                    car.Model = models.Where(m => m.Id == car.ModelId).FirstOrDefault();
+                    car.Brand = car.Model.Brand;
+
+                    cars.Add(car);
+                }
+                connection.Close();
+            }
+
+            return cars;
+        }
+
         public ObservableCollection<Car> GetAllCars()
         {
             ObservableCollection<Car> cars = new ObservableCollection<Car>();
@@ -117,7 +243,7 @@ namespace Core.Repositories.DBRepositories
 
                     car.Model = models.Where(m => m.Id == car.ModelId).FirstOrDefault();
                     car.Brand = car.Model.Brand;
-                    // Add the car object to the ObservableCollection
+
                     cars.Add(car);
                 }
 

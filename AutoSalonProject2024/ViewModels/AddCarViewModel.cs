@@ -58,7 +58,7 @@ namespace AutoSalonProject2024.ViewModels
         private void AddCarMethod(object obj)
         {
             DateOnly date = DateOnly.FromDateTime(PurchaseDate);
-            if (ProductionYear != null && HorsePower != null && PurchasePrice != null)
+            if (ProductionYear != null && HorsePower != null && PurchasePrice != null && CarModel != null)
             {
                 if (validateCarDetails(int.Parse(ProductionYear), int.Parse(HorsePower), decimal.Parse(PurchasePrice), CarModel, CarBrand))
                 {

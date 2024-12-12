@@ -58,5 +58,15 @@ namespace AutoSalonProject2024.ViewModels
         {
             Cars = _carService.GetAllCars();
         }
+
+        public void FilterCars(string filter)
+        {
+            Cars = _carService.FilterCars(filter);
+        }
+
+        internal void FilterCarsPrice(int from, int to, string filter)
+        {
+            Cars = _carService.FilterCarsPrice(from, to, filter);
+        }
     }
 }
