@@ -18,6 +18,17 @@ namespace Core.Repositories.CSVRepositories
         {
             _dataProvider = CSVResourceProvider.GetInstance();
         }
+
+        public void AddCarModel(CarModel CarModel)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteCarModel(CarModel carModel)
+        {
+            throw new NotImplementedException();
+        }
+
         public ObservableCollection<CarModel> GetAllModels()
         {
             return _dataProvider.modelsList;

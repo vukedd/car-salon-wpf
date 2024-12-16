@@ -3,6 +3,7 @@ using Core.IRepositories;
 using Core.IServices;
 using Core.Repositories;
 using Core.Repositories.CSVRepositories;
+using Core.Repositories.DBRepositories;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -18,7 +19,17 @@ namespace Core.Services
 
         public CarModelService()
         {
-            _carModelRepository = new CarModelRepository();
+            _carModelRepository = new CarModelRepositoryDB();
+        }
+
+        public void AddCarModel(CarModel CarModel)
+        {
+            _carModelRepository.AddCarModel(CarModel);
+        }
+
+        public void DeleteCarModel(CarModel carModel)
+        {
+            _carModelRepository.DeleteCarModel(carModel);
         }
 
         public ObservableCollection<CarModel> GetAllModels()

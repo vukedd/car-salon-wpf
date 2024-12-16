@@ -11,5 +11,7 @@ namespace Core.IRepositories
     public interface ICarModelRepository
     {
         public ObservableCollection<CarModel> GetAllModels();
+        public void AddCarModel(CarModel CarModel);
+        void DeleteCarModel(CarModel carModel);
     }
 }

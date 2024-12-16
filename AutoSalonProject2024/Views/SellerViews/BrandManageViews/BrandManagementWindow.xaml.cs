@@ -53,7 +53,7 @@ namespace AutoSalonProject2024.Views.SellerViews.BrandManageViews
             }
             else
             {
-                MessageBoxResult result = MessageBox.Show("Are you sure you want to delete this brand?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                MessageBoxResult result = MessageBox.Show("Are you sure you want to delete the following brand: " + ((CarBrand)BrandListView.SelectedItem).Name, "Confirm deletion", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (result == MessageBoxResult.Yes)
                 {
                     bool deletionResult = _brandManagementViewModel.DeleteBrand(BrandListView.SelectedItem);

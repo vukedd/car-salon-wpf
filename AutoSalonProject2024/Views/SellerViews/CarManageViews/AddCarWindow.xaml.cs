@@ -44,7 +44,8 @@ namespace AutoSalonProject2024.Views.SellerViews.CarManageViews
 
         private void OnCarAddError(object? sender, EventArgs e)
         {
-            MessageBox.Show("Please check all fields!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+            MessageBox.Show("Please check all fields before submitting!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            validateFields();
         }
 
         private void BrandComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -60,6 +61,8 @@ namespace AutoSalonProject2024.Views.SellerViews.CarManageViews
             if (models.Count() > 0)
                 modelsCombo.SelectedItem = models[0];
             modelsCombo.ItemsSource = models;
+
+            validateFields();
         }
 
         private void OnCarAdded(object sender, EventArgs e)
@@ -70,67 +73,128 @@ namespace AutoSalonProject2024.Views.SellerViews.CarManageViews
 
         private void ProductionYearTB_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (int.TryParse(ProductionYearTB.Text, null, out int result))
-            {
-                if (result < 1950 || result > 2025)
-                {
-                    ProductionYearValidationLabel.Visibility = Visibility.Visible;
-                }
-                else
-                {
-                    ProductionYearValidationLabel.Visibility = Visibility.Hidden;
-                }
-            }
+            validateFields();
         }
 
         private void fuelType_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (fuelType.SelectedItem == null)
-            {
-                FuelTypeValidationLabel.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                FuelTypeValidationLabel.Visibility = Visibility.Hidden;
-            }
+            validateFields();
         }
 
         private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            Regex regex = new Regex("[^0-9]+");
-            e.Handled = regex.IsMatch(e.Text);
+            validateFields();
         }
 
         private void HorsePower_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (int.TryParse(HorsePowerTB.Text, null, out int result))
-            {
-                if (result < 50 || result > 1000)
-                {
-                    HorsePowerValidationLabel.Visibility = Visibility.Visible;
-                }
-                else
-                {
-                    HorsePowerValidationLabel.Visibility = Visibility.Hidden;
-                }
-            }
+            validateFields();
         }
 
         private void PurchasePrice_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (int.TryParse(PurchasePriceTB.Text, null, out int result))
+            validateFields();
+        }
+
+        private void modelsCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            validateFields();
+        }
+
+        private void validateFields()
+        {
+            bool validPrice = false;
+            bool validHP = false;
+            bool validFuelType = false;
+            bool validProdYear = false;
+
+            if (int.TryParse(PurchasePriceTB.Text, null, out int result1))
             {
-                if (result < 0 || result > 5000000)
+                if (result1 < 0 || result1 > 5000000)
                 {
                     PurchasePriceValidationLabel.Visibility = Visibility.Visible;
+                    validPrice = false;
                 }
                 else
                 {
                     PurchasePriceValidationLabel.Visibility = Visibility.Hidden;
+                    validPrice = true;
                 }
             }
-        }
+            else
+            {
+                PurchasePriceValidationLabel.Visibility = Visibility.Visible;
+                validPrice = false;
+            }
 
+            if (int.TryParse(HorsePowerTB.Text, null, out int result2))
+            {
+                if (result2 < 50 || result2 > 1000)
+                {
+                    HorsePowerValidationLabel.Visibility = Visibility.Visible;
+                    validHP = false;
+                }
+                else
+                {
+                    HorsePowerValidationLabel.Visibility = Visibility.Hidden;
+                    validHP = true;
+                }
+            }
+            else
+            {
+                HorsePowerValidationLabel.Visibility = Visibility.Visible;
+                validHP = false;
+            }
+
+            if (fuelType.SelectedItem == null)
+            {
+                FuelTypeValidationLabel.Visibility = Visibility.Visible;
+                validFuelType = false;
+            }
+            else
+            {
+                FuelTypeValidationLabel.Visibility = Visibility.Hidden;
+                validFuelType = true;
+            }
+
+            if (int.TryParse(ProductionYearTB.Text, null, out int result3))
+            {
+                if (result3 < 1950 || result3 > 2025)
+                {
+                    ProductionYearValidationLabel.Visibility = Visibility.Visible;
+                    validProdYear = false;
+                }
+                else
+                {
+                    ProductionYearValidationLabel.Visibility = Visibility.Hidden;
+                    validProdYear = true;
+                }
+            }
+            else
+            {
+                ProductionYearValidationLabel.Visibility = Visibility.Visible;
+                validProdYear = false;
+            }
+
+            if (brandCombo.SelectedItem == null)
+            {
+                BrandValidationLabel.Visibility = Visibility.Visible;
+            } 
+            else
+            {
+                BrandValidationLabel.Visibility = Visibility.Collapsed;
+            }
+
+            if (modelsCombo.SelectedItem == null)
+            {
+                ModelValidationLabel.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                ModelValidationLabel.Visibility = Visibility.Collapsed;
+            }
+            //return validFuelType && validHP && validPrice && validProdYear;
+        }
 
     }
 }

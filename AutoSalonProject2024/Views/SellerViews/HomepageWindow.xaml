@@ -24,7 +24,7 @@
                 <Button Width="100" Height="40" Margin="0,0,0,0" Content="Show sales" Click="ShowSalesButton_Click"></Button>
                 <Separator/>
                 <Button Width="100" Height="40" Margin="0, 0, 0, 0" Content="Brands" Click="ShowBrandsButton_Click"/>
-                <Button Width="100" Height="40" Margin="0, 0, 0, 0" Content="Models"/>
+                <Button Width="100" Height="40" Margin="0, 0, 0, 0" Content="Models" Click="ShowModelsButton_Click"/>
                 <Label Margin="140,5,0,0" FontSize="12">Search: </Label><TextBox Margin="0,0,0,0" Width="150" Height="30" TextChanged="SearchTextBox_TextChanged" Name="SearchBar"></TextBox>
             </ToolBar>
         </ToolBarTray>
@@ -38,6 +38,7 @@
             </ToolBar>
         </ToolBarTray>
         <TextBlock FontSize="30" Margin="440, 130,100,100" Name="WelcomeMsg" Text="{Binding Seller.Username}"></TextBlock>
+        
         <ListView Height="400" Width="830" Margin="0, 180, 0, 70" ItemsSource="{Binding Cars}" Name="CarListView">
             <ListView.View>
                 <GridView>

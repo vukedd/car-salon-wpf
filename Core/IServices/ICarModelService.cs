@@ -11,5 +11,7 @@ namespace Core.IServices
     public interface ICarModelService
     {
         public ObservableCollection<CarModel> GetAllModels();
+        public void AddCarModel(CarModel CarModel);
+        void DeleteCarModel(CarModel carModel);
     }
 }

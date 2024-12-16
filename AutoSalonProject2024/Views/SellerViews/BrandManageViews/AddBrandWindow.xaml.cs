@@ -35,7 +35,8 @@ namespace AutoSalonProject2024.Views.SellerViews.BrandManageViews
 
         private void OnCreationFailure(object? sender, EventArgs e)
         {
-            MessageBox.Show("Error while creating carBrand, please check all field!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            MessageBox.Show("Error while creating car brand, please check all field!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            validateFields();
         }
 
         private void OnCreationSuccess(object? sender, EventArgs e)
@@ -46,6 +47,16 @@ namespace AutoSalonProject2024.Views.SellerViews.BrandManageViews
 
         private void BrandNameTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            validateFields();
+        }
+
+        private void CountryComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            validateFields();
+        }
+
+        private bool validateFields()
+        {
             bool invalidLength = false;
             bool alreadyExists = false;
 
@@ -53,7 +64,7 @@ namespace AutoSalonProject2024.Views.SellerViews.BrandManageViews
             {
                 comboBoxValidation.Visibility = Visibility.Visible;
                 brandNameLBL.Margin = new Thickness(87, 0, 0, 0);
-            } 
+            }
             else
             {
                 comboBoxValidation.Visibility = Visibility.Collapsed;
@@ -65,7 +76,7 @@ namespace AutoSalonProject2024.Views.SellerViews.BrandManageViews
                 lengthValidation.Visibility = Visibility.Visible;
                 SubmitBTN.Margin = new Thickness(0, 20, 0, 0);
                 invalidLength = true;
-            } 
+            }
             else
             {
                 lengthValidation.Visibility = Visibility.Collapsed;
@@ -86,22 +97,10 @@ namespace AutoSalonProject2024.Views.SellerViews.BrandManageViews
                 alreadyExists = false;
                 if (!invalidLength)
                     SubmitBTN.Margin = new Thickness(0, 50, 0, 0);
-                
-            }
-        }
 
-        private void CountryComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (CountryComboBox.SelectedItem == null)
-            {
-                comboBoxValidation.Visibility = Visibility.Visible;
-                brandNameLBL.Margin = new Thickness(87, 0, 0, 0);
             }
-            else
-            {
-                comboBoxValidation.Visibility = Visibility.Collapsed;
-                brandNameLBL.Margin = new Thickness(87, 30, 0, 0);
-            }
+
+            return alreadyExists && invalidLength;
         }
     }
 }

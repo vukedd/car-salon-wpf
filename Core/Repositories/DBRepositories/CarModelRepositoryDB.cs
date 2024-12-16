@@ -21,6 +21,40 @@ namespace Core.Repositories.DBRepositories
         {
             _carBrandRepository = new CarBrandRepositoryDB();
         }
+
+        public void AddCarModel(CarModel CarModel)
+        {
+            using (var connection = new SqlConnection(Config.CONNECTION_STRING))
+            {
+                string commandText = @"INSERT INTO CarModel(Name, CarBrandId) VALUES (@Name, @CarBrandId);";
+                connection.Open();
+
+                SqlCommand command = new SqlCommand();
+                command.CommandText = commandText;
+                command.Connection = connection;
+                command.Parameters.Add(new SqlParameter("Name", CarModel.Name));
+                command.Parameters.Add(new SqlParameter("CarBrandId", CarModel.Brand.Id));
+
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void DeleteCarModel(CarModel carModel)
+        {
+            using (var connection = new SqlConnection(Config.CONNECTION_STRING))
+            {
+                string commandText = @"DELETE FROM CarModel WHERE CarModelId = @Id";
+                connection.Open();
+
+                SqlCommand command = new SqlCommand();
+                command.CommandText = commandText;
+                command.Parameters.Add(new SqlParameter("Id", carModel.Id));
+                command.Connection = connection;
+
+                command.ExecuteNonQuery();
+            }
+        }
+
         public ObservableCollection<CarModel> GetAllModels()
         {
             ObservableCollection<CarModel> models = new ObservableCollection<CarModel>();

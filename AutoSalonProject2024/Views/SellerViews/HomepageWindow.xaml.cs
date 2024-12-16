@@ -2,6 +2,7 @@
 using AutoSalonProject2024.ViewModels;
 using AutoSalonProject2024.Views.SellerViews.BrandManageViews;
 using AutoSalonProject2024.Views.SellerViews.CarManageViews;
+using AutoSalonProject2024.Views.SellerViews.ModelManageViews;
 using Core.Data;
 using System;
 using System.Collections.Generic;
@@ -30,12 +31,15 @@ namespace AutoSalonProject2024.Views.SellerViews
     public partial class HomepageWindow : Window
     {
         private HomepageWindowViewModel homePageViewModel;
+        private bool isAscending = true;
+
         public HomepageWindow()
         {
             InitializeComponent();
             homePageViewModel = new HomepageWindowViewModel();
             WelcomeMsg.Text = "Hello, " + HomepageWindowViewModel.Seller.Username;
             this.DataContext = homePageViewModel;
+            
         }
 
         private void AddNewButton_Click(object sender, RoutedEventArgs e)
@@ -59,7 +63,7 @@ namespace AutoSalonProject2024.Views.SellerViews
             }
             else
             {
-                MessageBox.Show("Please select vehicle!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Please select vehicle for edit!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }            
         }
 
@@ -70,19 +74,20 @@ namespace AutoSalonProject2024.Views.SellerViews
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
+            var carSelected = (Car)CarListView.SelectedItem;
             if (CarListView.SelectedItem != null)
             {
-                MessageBoxResult result = System.Windows.MessageBox.Show("Are you sure?", "Delete confirmation", System.Windows.MessageBoxButton.YesNo);
+                MessageBoxResult result = System.Windows.MessageBox.Show("Are you sure you want to remove the following vehicle: " + carSelected.Brand.Name + " " + carSelected.Model.Name + "?", "Confirm deletion", System.Windows.MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (result == MessageBoxResult.Yes)
                 {
-                    Car car = (Car)CarListView.SelectedItem;
+                    Car car = carSelected;
                     homePageViewModel.DeleteCar(car.Id);
                     homePageViewModel.Cars.Remove(car);
                 }
             }
             else
             {
-                MessageBox.Show("Please select vehicle!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Please select vehicle for deletion!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -184,5 +189,13 @@ namespace AutoSalonProject2024.Views.SellerViews
             Regex regex = new Regex("[^0-9]+");            
             e.Handled = regex.IsMatch(e.Text);
         }
+
+        private void ShowModelsButton_Click(object sender, RoutedEventArgs e)
+        {
+            ModelManagementWindow modelManagementWindow = new ModelManagementWindow();
+            modelManagementWindow.ShowDialog();
+        }
+
+
     }
 }
