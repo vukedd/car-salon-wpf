@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AutoSalonProject2024.Views.SellerViews" xmlns:models="clr-namespace:AutoSalonProject2024.Models;assembly=Core" d:DataContext="{d:DesignInstance Type=models:Transaction}"
+        xmlns:local="clr-namespace:AutoSalonProject2024.Views.SellerViews" xmlns:models="clr-namespace:AutoSalonProject2024.Models;assembly=Core" 
         mc:Ignorable="d"
         Title="HomepageWindow" Height="700" Width="1100" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
@@ -30,16 +30,23 @@
         </ToolBarTray>
         <ToolBarTray Height="50" Margin="0, -485, 0, 0" IsLocked="True">
             <ToolBar Margin="0,0,0,0" Width="1100" Height="50" Background="LightGray">
-                <TextBlock Margin="350,12,12,12">Price range from:</TextBlock>
+                <TextBlock Margin="300,12,12,12">Price range from:</TextBlock>
                 <TextBox Width="100" Name="PriceRangeFromTxtBox" PreviewTextInput="PriceRangeFromTxtBox_PreviewTextInput"></TextBox>
                 <TextBlock Margin="12">to:</TextBlock>
                 <TextBox Width="100" Name="PriceRangeToTxtBox" PreviewTextInput="PriceRangeToTxtBox_PreviewTextInput"></TextBox>
                 <Button Padding="5" Margin="10,5,5,5" Background="LightSlateGray" Foreground="white" Click="PriceRangeSubmit">Submit</Button>
             </ToolBar>
         </ToolBarTray>
-        <TextBlock FontSize="30" Margin="440, 130,100,100" Name="WelcomeMsg" Text="{Binding Seller.Username}"></TextBlock>
+        <ToolBarTray Height="50" Margin="0, -385, 0, 0" IsLocked="True">
+            <ToolBar Margin="0,0,0,0" Width="1100" Height="50" Background="LightGray">
+                <Label Margin="370,10,0,0">Sort By</Label>
+                <ComboBox Width="100" Margin="5,0,0,0" Name="PropertySortCombo" SelectionChanged="PropertySortCombo_SelectionChanged"/>
+                <ComboBox Width="100" Margin="5,0,0,0" Name="SortOrderCombo" SelectionChanged="SortOrderCombo_SelectionChanged"/>
+            </ToolBar>
+        </ToolBarTray>
+        <TextBlock FontSize="30" Margin="440, 175,100,100" Name="WelcomeMsg" Text="{Binding Seller.Username}"></TextBlock>
         
-        <ListView Height="400" Width="830" Margin="0, 180, 0, 70" ItemsSource="{Binding Cars}" Name="CarListView">
+        <ListView Height="400" Width="830" Margin="0, 200, 0,0" ItemsSource="{Binding Cars}" Name="CarListView">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Brand.Name}" Header="Brand" Width="75"></GridViewColumn>

@@ -19,12 +19,6 @@ namespace AutoSalonProject2024.ViewModels
         {
             _transactionService = new TransactionService();
             transactions = _transactionService.GetSellerTransactions(SellerId);
-            foreach (Transaction t in transactions)
-            {
-                Trace.WriteLine(t.Id);
-            }
         }
-
-
     }
 }

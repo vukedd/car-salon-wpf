@@ -3,8 +3,10 @@ using AutoSalonProject2024.ViewModels;
 using AutoSalonProject2024.Views.SellerViews.BrandManageViews;
 using AutoSalonProject2024.Views.SellerViews.CarManageViews;
 using AutoSalonProject2024.Views.SellerViews.ModelManageViews;
+using Azure.Core.Serialization;
 using Core.Data;
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -32,6 +34,8 @@ namespace AutoSalonProject2024.Views.SellerViews
     {
         private HomepageWindowViewModel homePageViewModel;
         private bool isAscending = true;
+        private static string[] propertyNames = { "Brand.Name", "Model.Name", "Brand.Country.Name", "Year", "FuelType", "HorsePower", "PurchaseDate", "PurchasePrice" };
+
 
         public HomepageWindow()
         {
@@ -39,7 +43,14 @@ namespace AutoSalonProject2024.Views.SellerViews
             homePageViewModel = new HomepageWindowViewModel();
             WelcomeMsg.Text = "Hello, " + HomepageWindowViewModel.Seller.Username;
             this.DataContext = homePageViewModel;
-            
+
+            string[] propNames = { "Brand name", "Model name", "Country name", "Production year", "Fuel type", "Horse power", "Purchase date", "Purchase price" };
+            PropertySortCombo.ItemsSource = propNames;
+
+            string[] order = { "Ascending", "Descending" };
+            SortOrderCombo.ItemsSource = order;
+
+            CarListView.Items.SortDescriptions.Add(new SortDescription("Brand.Name", ListSortDirection.Ascending));
         }
 
         private void AddNewButton_Click(object sender, RoutedEventArgs e)
@@ -51,6 +62,9 @@ namespace AutoSalonProject2024.Views.SellerViews
         public void refreshCars()
         {
             homePageViewModel.UpdateCars();
+            SearchBar.Text = "";
+            PriceRangeFromTxtBox.Text = "";
+            PriceRangeToTxtBox.Text = "";
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
@@ -64,7 +78,7 @@ namespace AutoSalonProject2024.Views.SellerViews
             else
             {
                 MessageBox.Show("Please select vehicle for edit!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }            
+            }
         }
 
         private void ExitMenuItem_Click(object sender, RoutedEventArgs e)
@@ -148,12 +162,12 @@ namespace AutoSalonProject2024.Views.SellerViews
             {
                 from = int.Parse(PriceRangeFromTxtBox.Text);
                 validFrom = true;
-            } 
-            
+            }
+
 
             int to = 0;
 
-            if (PriceRangeToTxtBox.Text.Trim() != "") 
+            if (PriceRangeToTxtBox.Text.Trim() != "")
             {
                 to = int.Parse(PriceRangeToTxtBox.Text);
                 validTo = true;
@@ -165,7 +179,7 @@ namespace AutoSalonProject2024.Views.SellerViews
                 filter = SearchBar.Text.Trim();
                 validSearchBar = true;
             }
-            
+
             if ((validFrom || validTo))
             {
                 homePageViewModel.FilterCarsPrice(from, to, filter);
@@ -186,7 +200,7 @@ namespace AutoSalonProject2024.Views.SellerViews
 
         private void PriceRangeFromTxtBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            Regex regex = new Regex("[^0-9]+");            
+            Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
         }
 
@@ -196,6 +210,14 @@ namespace AutoSalonProject2024.Views.SellerViews
             modelManagementWindow.ShowDialog();
         }
 
+        private void PropertySortCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            CarListView.Items.SortDescriptions[0] = new SortDescription(propertyNames[PropertySortCombo.SelectedIndex], SortOrderCombo.SelectedItem == "Ascending" ? ListSortDirection.Ascending : ListSortDirection.Descending);
+        }
 
+        private void SortOrderCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            CarListView.Items.SortDescriptions[0] = new SortDescription(propertyNames[PropertySortCombo.SelectedIndex], SortOrderCombo.SelectedItem == "Ascending" ? ListSortDirection.Ascending : ListSortDirection.Descending);
+        }
     }
 }
