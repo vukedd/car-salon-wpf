@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\Thinkpad\source\repos\AutoSalonProject2024\AutoSalonProject2024\App.xaml
-13-1118582642
+14-1362308887
 
-321587347495
+34516603504
 216-1087812222
-MainWindow.xaml;Views\LoginViews\LoginWindow.xaml;Views\RegisterViews\RegisterWindow.xaml;Views\SellerViews\BrandManageViews\AddBrandWindow.xaml;Views\SellerViews\BrandManageViews\BrandManagementWindow.xaml;Views\SellerViews\BrandManageViews\EditBrandWindow.xaml;Views\SellerViews\CarManageViews\AddCarWindow.xaml;Views\SellerViews\CarManageViews\EditCarWindow.xaml;Views\SellerViews\CarManageViews\SaleWindow.xaml;Views\SellerViews\HomepageWindow.xaml;Views\SellerViews\ModelManageViews\AddModelWindow.xaml;Views\SellerViews\ModelManageViews\ModelManagementWindow.xaml;Views\SellerViews\TransactionManagementWindow.xaml;
+MainWindow.xaml;Views\LoginViews\LoginWindow.xaml;Views\RegisterViews\RegisterWindow.xaml;Views\SellerViews\BrandManageViews\AddBrandWindow.xaml;Views\SellerViews\BrandManageViews\BrandManagementWindow.xaml;Views\SellerViews\BrandManageViews\EditBrandWindow.xaml;Views\SellerViews\CarManageViews\AddCarWindow.xaml;Views\SellerViews\CarManageViews\CarDetailsWindow.xaml;Views\SellerViews\CarManageViews\EditCarWindow.xaml;Views\SellerViews\CarManageViews\SaleWindow.xaml;Views\SellerViews\HomepageWindow.xaml;Views\SellerViews\ModelManageViews\AddModelWindow.xaml;Views\SellerViews\ModelManageViews\ModelManagementWindow.xaml;Views\SellerViews\TransactionManagementWindow.xaml;
 
-False
+True
 

@@ -20,26 +20,52 @@ namespace Core.Repositories.DBRepositories
     public class CarRepositoryDB : ICarRepository
     {
         ICarModelRepository _carModelRepository;
+        ICarImageRepository _carImageRepository;
         public CarRepositoryDB()
         {
             _carModelRepository = new CarModelRepositoryDB();
+            _carImageRepository = new CarImageRepository();
         }
         public void AddCar(Car car)
         {
             using (var connection = new SqlConnection(Config.CONNECTION_STRING))
             {
                 connection.Open();
-                SqlCommand command = connection.CreateCommand();
-                command.CommandText = @"INSERT INTO Car(ProductionYear, HorsePower, Sold, PurchasePrice, PurchaseDate, FuelType, CarModelId) VALUES (@ProductionYear, @HorsePower, @Sold, @PurchasePrice, @PurchaseDate, @FuelType, @CarModelId)";
-                command.Parameters.Add(new SqlParameter("ProductionYear", car.Year));
-                command.Parameters.Add(new SqlParameter("HorsePower", car.HorsePower));
-                command.Parameters.Add(new SqlParameter("Sold", car.Sold));
-                command.Parameters.Add(new SqlParameter("PurchasePrice", car.PurchasePrice));
-                command.Parameters.Add(new SqlParameter("PurchaseDate", car.PurchaseDate));
-                command.Parameters.Add(new SqlParameter("FuelType", (int)car.FuelType));
-                command.Parameters.Add(new SqlParameter("CarModelId", car.Model.Id));
+                var transaction = connection.BeginTransaction();
+                try
+                {
+                    SqlCommand command = connection.CreateCommand();
+                    command.CommandText = @"INSERT INTO Car(ProductionYear, HorsePower, Sold, PurchasePrice, PurchaseDate, FuelType, CarModelId) OUTPUT INSERTED.CarId VALUES (@ProductionYear, @HorsePower, @Sold, @PurchasePrice, @PurchaseDate, @FuelType, @CarModelId)";
+                    command.Parameters.Add(new SqlParameter("ProductionYear", car.Year));
+                    command.Parameters.Add(new SqlParameter("HorsePower", car.HorsePower));
+                    command.Parameters.Add(new SqlParameter("Sold", car.Sold));
+                    command.Parameters.Add(new SqlParameter("PurchasePrice", car.PurchasePrice));
+                    command.Parameters.Add(new SqlParameter("PurchaseDate", car.PurchaseDate));
+                    command.Parameters.Add(new SqlParameter("FuelType", (int)car.FuelType));
+                    command.Parameters.Add(new SqlParameter("CarModelId", car.Model.Id));
+                    command.Transaction = transaction;
 
-                command.ExecuteNonQuery();
+                    int carId = (int)command.ExecuteScalar();
+
+                    SqlCommand commandImages;
+                    foreach (var image in car.Images)
+                    {
+                        commandImages = connection.CreateCommand();
+                        commandImages.Transaction = transaction;
+                        commandImages.CommandText = @"INSERT INTO CarImages(ImageData, ContentType, CarId) VALUES (@ImageData, @ContentType, @CarId);";
+                        commandImages.Parameters.Add(new SqlParameter("ImageData", image));
+                        commandImages.Parameters.Add(new SqlParameter("ContentType", "image"));
+                        commandImages.Parameters.Add(new SqlParameter("CarId", carId));
+                        commandImages.ExecuteNonQuery();
+                    }
+
+                    transaction.Commit();
+                } 
+                catch (Exception e)
+                {
+                    transaction.Rollback();
+                    Trace.WriteLine(e.Message);
+                }
             }
         }
 
@@ -294,6 +320,7 @@ namespace Core.Repositories.DBRepositories
 
                     car.Model = models.Where(m => m.Id == car.ModelId).FirstOrDefault();
                     car.Brand = car.Model.Brand;
+                    car.Images = _carImageRepository.GetImagesByCarId(Id);
                     selectedCar = car;
                 }
             }

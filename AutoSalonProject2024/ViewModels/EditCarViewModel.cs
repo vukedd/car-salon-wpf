@@ -51,6 +51,7 @@ namespace AutoSalonProject2024.ViewModels
             _carModelService = new CarModelService();
             Brands = _carBrandService.GetAllBrands();
             Models = _carModelService.GetAllModels();
+            Trace.WriteLine(_carService.GetCarById(car.Id).Images.Count());
 
         }
         private bool canEditCar(object obj)

@@ -18,7 +18,7 @@
                     <GridViewColumn DisplayMemberBinding="{Binding Car.Brand.Name}" Header="Car brand"></GridViewColumn>
                     <GridViewColumn DisplayMemberBinding="{Binding Car.Model.Name}" Header="Car model"></GridViewColumn>
                     <GridViewColumn DisplayMemberBinding="{Binding Car.Year}" Header="Production year"></GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Profit}" Header="Profit"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Profit}" Header="PnL"></GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>

@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Diagnostics.Contracts;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,6 +25,8 @@ namespace AutoSalonProject2024.Models
         private int _brandId;
         private int _modelId;
         private FuelType _fuelType;
+
+        private List<byte[]> _images;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -174,6 +177,20 @@ namespace AutoSalonProject2024.Models
                 }
             }
         }
+
+        public List<byte[]> Images
+        {
+            get => _images;
+            set
+            {
+                if (_images != value)
+                {
+                    _images = value;
+                    OnPropertyChanged(nameof(Images)); 
+                }
+            }
+        }
+
         public Car() { }
         public Car(int Id, int Year, int HorsePower, bool Sold, decimal PurchasePrice, DateOnly PurchaseDate, CarModel model, CarBrand brand, FuelType FuelType)
         {
@@ -188,6 +205,22 @@ namespace AutoSalonProject2024.Models
             this.ModelId = model.Id;
             this.BrandId = brand.Id;
             this.FuelType = FuelType;
+        }
+
+        public Car(int Id, int Year, int HorsePower, bool Sold, decimal PurchasePrice, DateOnly PurchaseDate, CarModel model, CarBrand brand, FuelType FuelType, List<byte[]> Images)
+        {
+            this.Id = Id;
+            this.Year = Year;
+            this.HorsePower = HorsePower;
+            this.Sold = Sold;
+            this.PurchasePrice = PurchasePrice;
+            this.PurchaseDate = PurchaseDate;
+            this.Brand = brand;
+            this.Model = model;
+            this.ModelId = model.Id;
+            this.BrandId = brand.Id;
+            this.FuelType = FuelType;
+            this.Images = Images;
         }
 
         public Car(Car otherCar)

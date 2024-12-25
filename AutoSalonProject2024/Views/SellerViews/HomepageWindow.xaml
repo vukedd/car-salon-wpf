@@ -20,12 +20,14 @@
                 <Button Width="100" Height="40" Margin="0, 0, 0, 0" Content="Edit car" Click="EditButton_Click"/>
                 <Button Width="100" Height="40" Margin="0, 0, 0, 0" Content="Delete car" Click="DeleteButton_Click"/>
                 <Button Width="100" Height="40" Margin="0, 0, 0, 0" Content="Sell car" Click="SaleButton_Click"/>
+                <Button Width="100" Height="40" Margin="0, 0, 0, 0" Content="Show details" Click="ShowDetails_Click"/>
                 <Separator/>
                 <Button Width="100" Height="40" Margin="0,0,0,0" Content="Show sales" Click="ShowSalesButton_Click"></Button>
                 <Separator/>
                 <Button Width="100" Height="40" Margin="0, 0, 0, 0" Content="Brands" Click="ShowBrandsButton_Click"/>
                 <Button Width="100" Height="40" Margin="0, 0, 0, 0" Content="Models" Click="ShowModelsButton_Click"/>
-                <Label Margin="140,5,0,0" FontSize="12">Search: </Label><TextBox Margin="0,0,0,0" Width="150" Height="30" TextChanged="SearchTextBox_TextChanged" Name="SearchBar"></TextBox>
+                <Label Margin="40,5,0,0" FontSize="12">Search: </Label><TextBox Margin="0,0,0,0" Width="150" Height="30" TextChanged="SearchTextBox_TextChanged" Name="SearchBar"></TextBox>
+                
             </ToolBar>
         </ToolBarTray>
         <ToolBarTray Height="50" Margin="0, -485, 0, 0" IsLocked="True">

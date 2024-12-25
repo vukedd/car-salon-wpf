@@ -1,12 +1,171 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{37085A5A-B4D7-4FAF-B180-E9AFDED2E61A}|AutoSalonProject2024\\AutoSalonProject2024.csproj|c:\\users\\thinkpad\\source\\repos\\autosalonproject2024\\autosalonproject2024\\views\\sellerviews\\carmanageviews\\cardetailswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{37085A5A-B4D7-4FAF-B180-E9AFDED2E61A}|AutoSalonProject2024\\AutoSalonProject2024.csproj|solutionrelative:autosalonproject2024\\views\\sellerviews\\carmanageviews\\cardetailswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37085A5A-B4D7-4FAF-B180-E9AFDED2E61A}|AutoSalonProject2024\\AutoSalonProject2024.csproj|c:\\users\\thinkpad\\source\\repos\\autosalonproject2024\\autosalonproject2024\\viewmodels\\cardetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37085A5A-B4D7-4FAF-B180-E9AFDED2E61A}|AutoSalonProject2024\\AutoSalonProject2024.csproj|solutionrelative:autosalonproject2024\\viewmodels\\cardetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37085A5A-B4D7-4FAF-B180-E9AFDED2E61A}|AutoSalonProject2024\\AutoSalonProject2024.csproj|c:\\users\\thinkpad\\source\\repos\\autosalonproject2024\\autosalonproject2024\\views\\sellerviews\\carmanageviews\\cardetailswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37085A5A-B4D7-4FAF-B180-E9AFDED2E61A}|AutoSalonProject2024\\AutoSalonProject2024.csproj|solutionrelative:autosalonproject2024\\views\\sellerviews\\carmanageviews\\cardetailswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37085A5A-B4D7-4FAF-B180-E9AFDED2E61A}|AutoSalonProject2024\\AutoSalonProject2024.csproj|c:\\users\\thinkpad\\source\\repos\\autosalonproject2024\\autosalonproject2024\\views\\sellerviews\\homepagewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37085A5A-B4D7-4FAF-B180-E9AFDED2E61A}|AutoSalonProject2024\\AutoSalonProject2024.csproj|solutionrelative:autosalonproject2024\\views\\sellerviews\\homepagewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35E409AD-365E-4E84-A237-6853BCF67F01}|Core\\Core.csproj|c:\\users\\thinkpad\\source\\repos\\autosalonproject2024\\core\\repositories\\dbrepositories\\carimagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35E409AD-365E-4E84-A237-6853BCF67F01}|Core\\Core.csproj|solutionrelative:core\\repositories\\dbrepositories\\carimagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35E409AD-365E-4E84-A237-6853BCF67F01}|Core\\Core.csproj|c:\\users\\thinkpad\\source\\repos\\autosalonproject2024\\core\\repositories\\dbrepositories\\carrepositorydb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35E409AD-365E-4E84-A237-6853BCF67F01}|Core\\Core.csproj|solutionrelative:core\\repositories\\dbrepositories\\carrepositorydb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35E409AD-365E-4E84-A237-6853BCF67F01}|Core\\Core.csproj|c:\\users\\thinkpad\\source\\repos\\autosalonproject2024\\core\\services\\carservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35E409AD-365E-4E84-A237-6853BCF67F01}|Core\\Core.csproj|solutionrelative:core\\services\\carservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37085A5A-B4D7-4FAF-B180-E9AFDED2E61A}|AutoSalonProject2024\\AutoSalonProject2024.csproj|c:\\users\\thinkpad\\source\\repos\\autosalonproject2024\\autosalonproject2024\\views\\sellerviews\\homepagewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{37085A5A-B4D7-4FAF-B180-E9AFDED2E61A}|AutoSalonProject2024\\AutoSalonProject2024.csproj|solutionrelative:autosalonproject2024\\views\\sellerviews\\homepagewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37085A5A-B4D7-4FAF-B180-E9AFDED2E61A}|AutoSalonProject2024\\AutoSalonProject2024.csproj|c:\\users\\thinkpad\\source\\repos\\autosalonproject2024\\autosalonproject2024\\views\\sellerviews\\carmanageviews\\addcarwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37085A5A-B4D7-4FAF-B180-E9AFDED2E61A}|AutoSalonProject2024\\AutoSalonProject2024.csproj|solutionrelative:autosalonproject2024\\views\\sellerviews\\carmanageviews\\addcarwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 189,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CarDetailsViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonProject2024\\ViewModels\\CarDetailsViewModel.cs",
+              "RelativeDocumentMoniker": "AutoSalonProject2024\\ViewModels\\CarDetailsViewModel.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonProject2024\\ViewModels\\CarDetailsViewModel.cs",
+              "RelativeToolTip": "AutoSalonProject2024\\ViewModels\\CarDetailsViewModel.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T19:59:59.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomepageWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonProject2024\\Views\\SellerViews\\HomepageWindow.xaml.cs",
+              "RelativeDocumentMoniker": "AutoSalonProject2024\\Views\\SellerViews\\HomepageWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonProject2024\\Views\\SellerViews\\HomepageWindow.xaml.cs",
+              "RelativeToolTip": "AutoSalonProject2024\\Views\\SellerViews\\HomepageWindow.xaml.cs",
+              "ViewState": "AgIAANYAAAAAAAAAAAAAAOYAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T19:59:41.837Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CarImageRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\Core\\Repositories\\DBRepositories\\CarImageRepository.cs",
+              "RelativeDocumentMoniker": "Core\\Repositories\\DBRepositories\\CarImageRepository.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\Core\\Repositories\\DBRepositories\\CarImageRepository.cs",
+              "RelativeToolTip": "Core\\Repositories\\DBRepositories\\CarImageRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T19:59:22.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CarRepositoryDB.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\Core\\Repositories\\DBRepositories\\CarRepositoryDB.cs",
+              "RelativeDocumentMoniker": "Core\\Repositories\\DBRepositories\\CarRepositoryDB.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\Core\\Repositories\\DBRepositories\\CarRepositoryDB.cs",
+              "RelativeToolTip": "Core\\Repositories\\DBRepositories\\CarRepositoryDB.cs",
+              "ViewState": "AgIAACMBAAAAAAAAAAAAwEIBAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T19:55:15.215Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CarService.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\Core\\Services\\CarService.cs",
+              "RelativeDocumentMoniker": "Core\\Services\\CarService.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\Core\\Services\\CarService.cs",
+              "RelativeToolTip": "Core\\Services\\CarService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T19:55:06.558Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "HomepageWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonProject2024\\Views\\SellerViews\\HomepageWindow.xaml",
+              "RelativeDocumentMoniker": "AutoSalonProject2024\\Views\\SellerViews\\HomepageWindow.xaml",
+              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonProject2024\\Views\\SellerViews\\HomepageWindow.xaml",
+              "RelativeToolTip": "AutoSalonProject2024\\Views\\SellerViews\\HomepageWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-25T19:51:57.151Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CarDetailsWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonProject2024\\Views\\SellerViews\\CarManageViews\\CarDetailsWindow.xaml",
+              "RelativeDocumentMoniker": "AutoSalonProject2024\\Views\\SellerViews\\CarManageViews\\CarDetailsWindow.xaml",
+              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonProject2024\\Views\\SellerViews\\CarManageViews\\CarDetailsWindow.xaml",
+              "RelativeToolTip": "AutoSalonProject2024\\Views\\SellerViews\\CarManageViews\\CarDetailsWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-25T19:51:46.48Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AddCarWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonProject2024\\Views\\SellerViews\\CarManageViews\\AddCarWindow.xaml.cs",
+              "RelativeDocumentMoniker": "AutoSalonProject2024\\Views\\SellerViews\\CarManageViews\\AddCarWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonProject2024\\Views\\SellerViews\\CarManageViews\\AddCarWindow.xaml.cs",
+              "RelativeToolTip": "AutoSalonProject2024\\Views\\SellerViews\\CarManageViews\\AddCarWindow.xaml.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T19:51:19.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CarDetailsWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonProject2024\\Views\\SellerViews\\CarManageViews\\CarDetailsWindow.xaml.cs",
+              "RelativeDocumentMoniker": "AutoSalonProject2024\\Views\\SellerViews\\CarManageViews\\CarDetailsWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\AutoSalonProject2024\\AutoSalonProject2024\\Views\\SellerViews\\CarManageViews\\CarDetailsWindow.xaml.cs",
+              "RelativeToolTip": "AutoSalonProject2024\\Views\\SellerViews\\CarManageViews\\CarDetailsWindow.xaml.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAcwBwAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T19:51:16.887Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

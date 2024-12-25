@@ -219,5 +219,18 @@ namespace AutoSalonProject2024.Views.SellerViews
         {
             CarListView.Items.SortDescriptions[0] = new SortDescription(propertyNames[PropertySortCombo.SelectedIndex], SortOrderCombo.SelectedItem == "Ascending" ? ListSortDirection.Ascending : ListSortDirection.Descending);
         }
+
+        private void ShowDetails_Click(object sender, RoutedEventArgs e)
+        {
+            if (CarListView.SelectedItem == null)
+            {
+                MessageBox.Show("Please select vehicle for sale!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            } 
+            else
+            {
+                CarDetailsWindow carDetailsWindow = new CarDetailsWindow(((Car)CarListView.SelectedItem).Id);
+                carDetailsWindow.ShowDialog();
+            }
+        }
     }
 }

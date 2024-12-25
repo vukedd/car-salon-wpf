@@ -4,11 +4,13 @@ using AutoSalonProject2024.Models;
 using Core.Data;
 using Core.IServices;
 using Core.Services;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Printing;
 using System.Security.Policy;
@@ -33,21 +35,61 @@ namespace AutoSalonProject2024.ViewModels
         // ViewModel props
         public event EventHandler carAdded;
         public event EventHandler carAddError;
+        public event EventHandler onImageUploadChange;
         public ObservableCollection<CarBrand> Brands { get; set; }
         public ObservableCollection<CarModel> Models { get; set; }
+        public ObservableCollection<byte[]> ImageBytes { get; set; }
+        public ObservableCollection<string> FileNames { get; set; }
         public ICommand AddCar { get; set; }
+        public ICommand UploadAndProcessImages { get; set; }
         private ICarService _carService { get; set; }
         private ICarBrandService _carBrandService;
         private ICarModelService _carModelService;
+
         public AddCarViewModel()
         {
             _carBrandService = new CarBrandService();
             _carModelService = new CarModelService();
 
             AddCar = new RelayCommand(AddCarMethod, CanAddCar);
+            UploadAndProcessImages = new RelayCommand(UploadAndProcessImagesMethod, CanUploadAndProcessImages);
+
             Brands = _carBrandService.GetAllBrands();
             Models = _carModelService.GetAllModels();
+            ImageBytes = new ObservableCollection<byte[]>();
+            FileNames = new ObservableCollection<string>();
             _carService = new CarService();
+        }
+
+        private bool CanUploadAndProcessImages(object obj)
+        {
+            return true;
+        }
+
+        private void UploadAndProcessImagesMethod(object obj)
+        {
+            var openFileDialog = new OpenFileDialog
+            {
+                Multiselect = true,
+                Filter = "Image files|*.jpg;*.jpeg;*.png;*.bmp;*.gif"
+            };
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                ImageBytes.Clear();
+                FileNames.Clear();
+                foreach (var filePath in openFileDialog.FileNames)
+                {
+                    ImageBytes.Add(File.ReadAllBytes(filePath));
+                    FileNames.Add(Path.GetFileName(filePath));
+                }
+                OnImageUploadChange();
+            }
+        }
+
+        public void OnImageUploadChange()
+        {
+            onImageUploadChange?.Invoke(this, EventArgs.Empty);
         }
 
         private bool CanAddCar(object obj)
@@ -62,7 +104,7 @@ namespace AutoSalonProject2024.ViewModels
             {
                 if (validateCarDetails(int.Parse(ProductionYear), int.Parse(HorsePower), decimal.Parse(PurchasePrice), CarModel, CarBrand))
                 {
-                    _carService.AddCar(new Car(0, int.Parse(ProductionYear), int.Parse(HorsePower), false, decimal.Parse(PurchasePrice), date, CarModel, CarBrand, FuelType));
+                    _carService.AddCar(new Car(0, int.Parse(ProductionYear), int.Parse(HorsePower), false, decimal.Parse(PurchasePrice), date, CarModel, CarBrand, FuelType, ImageBytes.ToList()));
                     OnCarAdd();
                 }
             }

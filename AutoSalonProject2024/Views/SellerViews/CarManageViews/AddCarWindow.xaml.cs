@@ -1,6 +1,7 @@
 ﻿using AutoSalonProject2024.Enums;
 using AutoSalonProject2024.Models;
 using AutoSalonProject2024.ViewModels;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -17,6 +18,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Media.TextFormatting;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace AutoSalonProject2024.Views.SellerViews.CarManageViews
 {
@@ -37,9 +39,31 @@ namespace AutoSalonProject2024.Views.SellerViews.CarManageViews
             fuelType.ItemsSource = Enum.GetValues(typeof(FuelType));
             addCarViewModel.carAdded += OnCarAdded;
             addCarViewModel.carAddError += OnCarAddError;
+            addCarViewModel.onImageUploadChange += OnImageUploadChange;
             modelsCombo.IsEnabled = false;
             PurchaseDateDP.DisplayDateEnd = DateTime.Today;
             PurchaseDateDP.SelectedDate = DateTime.Today;
+        }
+
+        private void OnImageUploadChange(object? sender, EventArgs e)
+        {
+            StringBuilder sb = new StringBuilder();
+            if (addCarViewModel.FileNames.Count() > 0 && addCarViewModel.FileNames.Count() < 6)
+            {
+                foreach (var filename in addCarViewModel.FileNames)
+                {
+                    sb.Append(filename + ";");
+                }
+
+                ImageUploadLBL.Content = sb.ToString();
+                ImageUploadLBL.Margin = new Thickness(100, 0, 0, 0);
+            }
+            else
+            {
+                MessageBox.Show("You can upload maximum 5 images", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                ImageUploadLBL.Content = "No images uploaded*";
+                ImageUploadLBL.Margin = new Thickness(180, 0, 0, 0);
+            }
         }
 
         private void OnCarAddError(object? sender, EventArgs e)
@@ -195,6 +219,5 @@ namespace AutoSalonProject2024.Views.SellerViews.CarManageViews
             }
             //return validFuelType && validHP && validPrice && validProdYear;
         }
-
     }
 }

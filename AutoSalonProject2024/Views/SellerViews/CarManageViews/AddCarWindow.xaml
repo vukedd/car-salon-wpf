@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoSalonProject2024.Views.SellerViews.CarManageViews"
         mc:Ignorable="d"
-        Title="AddCarWindow" Height="750" Width="500" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="AddCarWindow" Height="780" Width="500" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <StackPanel>
         <TextBlock FontSize="40" Margin="170,0,0,0">Add car</TextBlock>
         <Label FontSize="15" Margin="210,0,0,0">Brand:</Label>
@@ -28,6 +28,9 @@
         <Label Foreground="red" Margin="160,0,0,0" Visibility="Hidden" Name="FuelTypeValidationLabel">FuelType must be selected!</Label>
         <Label Margin="190,0,0,0" FontSize="15">Purchase date:</Label>
         <DatePicker Width="120" Height="25" Margin="0,0,0,0" Name="PurchaseDateDP" SelectedDate="{Binding PurchaseDate}"></DatePicker>
-        <Button Width="100" Height="30" Margin="0,50,0,0" Command="{Binding AddCar}">Submit</Button>
+        <Label  Margin="195,20,0,0" FontSize="15">Car images:</Label>
+        <Button Command="{Binding UploadAndProcessImages}" Width="100" Name="Add_Images">Add images</Button>
+        <Label Name="ImageUploadLBL" Margin="180,0,0,0">No images uploaded*</Label>
+        <Button Width="50" Height="30" Margin="0,10,0,0" Command="{Binding AddCar}">Submit</Button>
     </StackPanel>
 </Window>
