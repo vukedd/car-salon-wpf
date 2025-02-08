@@ -20,5 +20,7 @@ namespace AutoSalonProject2024.Models
             this.StreetNumber = StreetNumber;
             this.PostalCode = PostalCode;
         }
+
+        public Address() { }
     }
 }

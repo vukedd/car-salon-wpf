@@ -2,6 +2,8 @@
 using AutoSalonProject2024.Models;
 using AutoSalonProject2024.Views.LoginViews;
 using AutoSalonProject2024.Views.RegisterViews;
+using Core.IRepositories;
+using Core.Repositories.DBRepositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,14 +18,13 @@ namespace AutoSalonProject2024.ViewModels
         public ICommand ShowLoginWindow { get; set; }
         public ICommand ShowRegisterAsSellerWindow { get; set; }
 
-
+        private ICarDealershipRepository _carDealershipRepository;
         public Dealership Salon { get; set; }
 
         public MainWindowViewModel()
         {
-            Salon = new Dealership();
-            Salon.Name = "State Dealership";
-            Salon.Address = new Address(1, "Trg Dositeja Obradovica", "7A", "21000");
+            _carDealershipRepository = new CarDealershipRepository();
+            Salon = _carDealershipRepository.GetDealership();
             ShowRegisterAsSellerWindow = new RelayCommand(ShowRegisterAsSellerWindowMet, CanShowRegisterAsSellerWindow);
             ShowLoginWindow = new RelayCommand(ShowLoginWindowMet, CanShowLoginWindow);
         }
